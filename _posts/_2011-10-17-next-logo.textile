@@ -1,0 +1,9 @@
+---
+layout: post
+title: Paul Rand + Steve Jobs
+summary-only: yes
+external: http://imprint.printmag.com/branding/paul-rand-steve-jobs/
+image-path: /images/posts/next.png
+---
+
+Some love it, some hate it. Read Rand’s "proposal book":http://imprint.printmag.com/branding/paul-rand-steve-jobs/ designed specifically for Jobs before you make up your mind.

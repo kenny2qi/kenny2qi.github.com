@@ -1,9 +1,0 @@
----
-layout: post
-title: An Exquisite Beast
-summary-only: yes
-external: http://anexquisitebeast.com/
-image-path: /images/posts/beast.png
----
-
-Emory Allen adds to his illustration daily. Wonderfully simple idea. Why haven’t we seen this before? Or have we?

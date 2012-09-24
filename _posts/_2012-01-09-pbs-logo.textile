@@ -1,8 +1,0 @@
----
-layout: post
-title: Herb Lubalin on his PBS Logo
-summary-only: yes
-vimeo: http://www.youtube.com/embed/0eqgCuqDsz0
----
-
-A super-cute animation explaining the client-designer conversation behind the the PBS logo.

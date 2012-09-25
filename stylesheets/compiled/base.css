@@ -547,10 +547,10 @@ header {
     margin-bottom: 70px; }
 
 #sidebar {
-  width: 36.842105263157895%;
+  width: 25.842105263157895%;
   /*350 / 950*/
-  float: left;
-  margin-right: 5.263157894736842%;
+  float: right;
+  /*margin-left: 5.263157894736842%;*/
   /*50 / 950 */ }
   #sidebar #links, #sidebar #work {
     border-top: #393536 6px solid;
@@ -571,7 +571,7 @@ body.post #sidebar, body.about #sidebar {
   /*50 / 950 */ }
 
 #blog {
-  width: 57.894736842105263%;
+  width: 67.894736842105263%;
   /*550 / 950 */
   float: left; }
 

@@ -598,13 +598,12 @@ footer {
     width: 26%; }
   footer nav {
     float: left;
-    width: 26.1053%;
-    height: 60px; }
+    width: 73%; }
   footer #fine-print {
-    width: 37.8947%;
+    width: 67.8947%;
     float: left;
     font-size: 0.888888888888889em;
-    line-height: 1.45em; }
+    line-height: 2em; }
 
 /*Homepage*/
 .intro {

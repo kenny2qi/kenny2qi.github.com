@@ -86,6 +86,7 @@ nav ul, nav li {
   margin: 0;
   list-style: none;
   list-style-image: none; }
+nav li { float:left;margin: 0 30px 0 0; }
 
 small {
   font-size: 85%; }
@@ -597,9 +598,10 @@ footer {
     width: 26%; }
   footer nav {
     float: left;
-    width: 16.1053%; }
+    width: 26.1053%;
+    height: 60px; }
   footer #fine-print {
-    width: 57.8947%;
+    width: 37.8947%;
     float: left;
     font-size: 0.888888888888889em;
     line-height: 1.45em; }

@@ -179,7 +179,7 @@ stream.groupBy(new Fields("val1"))
      .aggregate(new Fields("val2"), new Sum(), new Fields("sum"))
 In this example, the output will contain the fields "val1" and "sum".
 
-h2. State
+##State
 A key problem to solve with realtime computation is how to manage state so that updates are idempotent in the face of failures and retries. It's impossible to eliminate failures, so when a node dies or something else goes wrong, batches need to be retried. The question is – how do you do state updates (whether external databases or state internal to the topology) so that it's like each message was only processed only once?
 
 This is a tricky problem, and can be illustrated with the following example. Suppose that you're doing a count aggregation of your stream and want to store the running count in a database. If you store only the count in the database and it's time to apply a state update for a batch, there's no way to know if you applied that state update before. The batch could have been attempted before, succeeded in updating the database, and then failed at a later step. Or the batch could have been attempted before and failed to update the database. You just don't know.
@@ -194,7 +194,7 @@ Of course, you don't have to do this logic manually in your topologies. This log
 
 A State is allowed to use whatever strategy it wants to store state. So it could store state in an external database or it could keep the state in-memory but backed by HDFS (like how HBase works). State's are not required to hold onto state forever. For example, you could have an in-memory State implementation that only keeps the last X hours of data available and drops anything older. Take a look at the implementation of the "Memcached integration":https://github.com/nathanmarz/trident-memcached/blob/master/src/jvm/trident/memcached/MemcachedState.java for an example State implementation.
 
-h2. Execution of Trident topologies
+##Execution of Trident topologies
 Trident topologies compile down into as efficient of a Storm topology as possible. Tuples are only sent over the network when a repartitioning of the data is required, such as if you do a groupBy or a shuffle. So if you had this Trident topology:
 
 <img src="https://github.com/nathanmarz/storm/wiki/images/trident-to-storm1.png" alt="Compiling Trident to Storm 1">
@@ -203,7 +203,7 @@ It would compile into Storm spouts/bolts like this:
 
 <img src="https://github.com/nathanmarz/storm/wiki/images/trident-to-storm2.png" alt="Compiling Trident to Storm 2">
 
-h2. Conclusion
+##Conclusion
 Trident makes realtime computation elegant. You've seen how high throughput stream processing, state manipulation, and low-latency querying can be seamlessly intermixed via Trident's API. Trident lets you express your realtime computations in a natural way while still getting maximal performance.
 
 原文: http://engineering.twitter.com/2012/08/trident-high-level-abstraction-for.html

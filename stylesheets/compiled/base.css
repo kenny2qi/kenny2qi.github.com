@@ -486,7 +486,7 @@ pre {
   padding: 20px 25px;
   font-size: 0.722222222222222em;
   line-height: 1.8em;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;    background: rgba(255, 255, 255, 0.5); }
 
 pre, code, kbd, samp {
   font-family: 'Monaco', 'andale mono', 'lucida console', monospace; }

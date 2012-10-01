@@ -16,21 +16,21 @@ Let's look at an illustrative example of Trident. This example will do two thing
 2. Implement queries to get the sum of the counts for a list of words
 For the purposes of illustration, this example will read an infinite stream of sentences from the following source:
 
-    FixedBatchSpout spout = new FixedBatchSpout(new Fields("sentence"), 3,
-    	new Values("the cow jumped over the moon"),
-    	new Values("the man went to the store and bought some candy"),
-    	new Values("four score and seven years ago"),
-    	new Values("how many apples can you eat"),
-    spout.setCycle(true);
+        FixedBatchSpout spout = new FixedBatchSpout(new Fields("sentence"), 3,
+        	new Values("the cow jumped over the moon"),
+        	new Values("the man went to the store and bought some candy"),
+        	new Values("four score and seven years ago"),
+        	new Values("how many apples can you eat"),
+        spout.setCycle(true);
 This spout cycles through that set of sentences over and over to produce the sentence stream. Here's the code to do the streaming word count part of the computation:
 
-    TridentTopology topology = new TridentTopology();        
-    TridentState wordCounts =
-        topology.newStream("spout1", spout)
-          .each(new Fields("sentence"), new Split(), new Fields("word"))
-          .groupBy(new Fields("word"))
-          .persistentAggregate(new MemoryMapState.Factory(), new Count(), new Fields("count"))                
-          .parallelismHint(6);
+        TridentTopology topology = new TridentTopology();        
+        TridentState wordCounts =
+            topology.newStream("spout1", spout)
+              .each(new Fields("sentence"), new Split(), new Fields("word"))
+              .groupBy(new Fields("word"))
+              .persistentAggregate(new MemoryMapState.Factory(), new Count(), new Fields("count"))                
+              .parallelismHint(6);
 Let's go through the code line by line. First a TridentTopology object is created, which exposes the interface for constructing Trident computations. TridentTopology has a method called newStream that creates a new stream of data in the topology reading from an input source. In this case, the input source is just the FixedBatchSpout defined from before. Input sources can also be queue brokers like Kestrel or Kafka. Trident keeps track of a small amount of state for each input source (metadata about what it has consumed) in Zookeeper, and the "spout1" string here specifies the node in Zookeeper where Trident should keep that metadata.
 
 Trident processes the stream as small batches of tuples. For example, the incoming stream of sentences might be divided into batches like so:

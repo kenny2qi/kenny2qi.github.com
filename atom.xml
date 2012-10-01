@@ -3,11 +3,11 @@ layout: nil
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>Nathan McGinness</title>
-    <link href="http://njmcgee.com/atom.xml" rel="self"/>
-    <link href="http://njmcgee.com/"/>
+    <title>KENNY的喃喃自语</title>
+    <link href="http://kenny7.com/atom.xml" rel="self"/>
+    <link href="http://kenny7.com/"/>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
-    <id>http://njmcgee.com/</id>
+    <id>http://kenny7.com/</id>
     
     {% for post in site.posts %}
     <entry>
@@ -18,13 +18,13 @@ layout: nil
         {% if post.external %}
         <link href="{{ post.external }}"/>
         {% else %}
-        <link href="http://njmcgee.com{{ post.url }}"/>
+        <link href="http://kenny7.com{{ post.url }}"/>
         {% endif %}
         <updated>{{ post.date | date_to_xmlschema }}</updated>
-        <id>njmcgee.com:{{ post.id }}</id>
+        <id>kenny7.com:{{ post.id }}</id>
         <content type="html">
           {% if post.image-path %}
-           <img src="http://njmcgee.com{{ post.image-path }}"></img>
+           <img src="http://kenny7.com{{ post.image-path }}"></img>
           {% endif %}
           {{ post.content }}
           

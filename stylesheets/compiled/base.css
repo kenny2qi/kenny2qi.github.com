@@ -446,7 +446,7 @@ a:hover {
 body {
   background-color: #F1F1F1;
   /*background: url(/images/bg.png) repeat;*/
-  font: normal 112.5% 'kepler-std-1', Georgia, serif;
+  font: normal 100.5% 'kepler-std-1', Georgia, serif;
   /*18 px default*/
   color: #393536;
   font-weight: 300;
@@ -543,12 +543,11 @@ header {
   padding-top: 100px;
   padding-bottom: 20px; }
   header h1 {
-	display: none;
-	color: #393536;
-	font-size: 2em;
-	font-weight: bold;
-	margin-bottom: 60px;
-	}
+    color: #393536;
+ 
+    font-size: 2em;
+    margin-bottom: 60px;
+}
   header svg {
     margin-bottom: 70px; }
 
@@ -773,11 +772,10 @@ body.about section {
   zoom: 1; }
 
 #secondary-logo {
-display: none;
-color: #393536;
-font-weight: bold;
-font-size: 40px;
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #393536;
+ 
+  font-size: 40px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #container {

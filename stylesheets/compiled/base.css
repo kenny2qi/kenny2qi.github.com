@@ -571,12 +571,6 @@ header {
       border: #393536 6px solid;
       margin-bottom: 30px; }
 
-body.post #sidebar, body.about #sidebar {
-  margin-left: 5.263157894736842%;
-  /*50 / 950 */
-  margin-right: 0;
-  /*50 / 950 */ }
-
 #blog {
   width: 72.894736842105263%;
   /*550 / 950 */

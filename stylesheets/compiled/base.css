@@ -468,7 +468,9 @@ h1, h2, h3, h4, h5, nav {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: .125em; }
-
+.summary h2 {
+margin-bottom: 12px;
+}
 blockquote {
   padding-left: 30px;
   border-left: 1px dotted #1e6386;

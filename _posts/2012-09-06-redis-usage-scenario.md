@@ -61,6 +61,7 @@ tags : [java, redis, NOSQL, 电商, 分布式架构]
 
 ##3. 用作缓存代替memcached（商品列表，评论列表，@提示列表，etc）
 相对memcached 简单的key-value存储来说，redis众多的数据结构（list,set,sorted set,hash, etc）可以更方便cache各种业务数据，性能也不亚于memcached。
+
 NOTE:
 	RPUSH pagewviews.user:<userid> 
 	EXPIRE pagewviews.user:<userid> 60 //注意要update timeout

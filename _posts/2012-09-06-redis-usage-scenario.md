@@ -12,7 +12,7 @@ tags : [java, redis, NOSQL, 电商, 分布式架构]
 
 说起电商，肯定离不开商品，而附带商品有各种计数（喜欢数，评论数，鉴定数，浏览数,etc），Redis的命令都是原子性的，你可以轻松地利用INCR，DECR等命令来计数。
 
-*商品维度计数（喜欢数，评论数，鉴定数，浏览数,etc）
+* 商品维度计数（喜欢数，评论数，鉴定数，浏览数,etc）
 
 采用Redis 的类型: <code class="default-size">Hash</code>.  如果你对redis数据类型不太熟悉，可以参考 http://redis.io/topics/data-types-intro
 
@@ -26,7 +26,7 @@ tags : [java, redis, NOSQL, 电商, 分布式架构]
 	1) "xihuan"
 	2) "6"
 
-*用户维度计数（动态数、关注数、粉丝数、喜欢商品数、发帖数 等）
+* 用户维度计数（动态数、关注数、粉丝数、喜欢商品数、发帖数 等）
 
 用户维度计数同商品维度计数都采用 <code class="default-size">Hashes</code>. 为User定义个key <code class="default-size">user:<userId></code>，为每种数值定义hashkey, 譬如关注数<code class="default-size">follow</code>
 

@@ -28,7 +28,7 @@ tags : [java, redis, NOSQL, 电商, 分布式架构]
 
 * 用户维度计数（动态数、关注数、粉丝数、喜欢商品数、发帖数 等）
 
-用户维度计数同商品维度计数都采用 <code class="default-size">Hashes</code>. 为User定义个key <code class="default-size">user:<userId></code>，为每种数值定义hashkey, 譬如关注数<code class="default-size">follow</code>
+用户维度计数同商品维度计数都采用 <code class="default-size">Hash</code>. 为User定义个key <code class="default-size">user:<userId></code>，为每种数值定义hashkey, 譬如关注数<code class="default-size">follow</code>
 
 	redis> HSET user:100000 follow 5
 	(integer) 1
@@ -78,19 +78,44 @@ NOTE:
 	
 BTW, 更复杂一点的实时计算可以采用Storm。
 
-##5. 用户Feeds
+##5. 用户Timeline/Feeds
+在[逛](http://guang.com) 有个类似微博的栏目[我关注](http://guang.com/f)，里面包括关注的人、主题、品牌的动态。redis在这边主要当作cache使用。
+
+	redis> ZADD user:100000:feed:topic	61307510400000 <feedId> //score 为timestamp
+	(integer) 1
+	redis> EXPIRE user:100000:feed:topic 24*60*60 //set timeout to one day
+	(integer) 1
+	redis> ZADD user:100000:feed:friend	61307510400000 <feedId> //不同类型feed
+	(integer) 1
+	redis> EXPIRE user:100000:feed:friend 24*60*60 //set timeout
+	(integer) 1
 
 
+##6. 最新列表&排行榜（用户刚刚喜欢的商品，etc）
 
-##6. 最新列表（用户刚刚喜欢的商品，etc）
+这里采用Redis的<code class="default-size">List</code>数据结构或<code class="default-size">sorted set</code> 结构, 方便实现最新列表or排行榜 等业务场景。
 
+##7. 消息通知
 
-
-##7. 用户消息提示
-
-
+其实这业务场景也可以算在计数上，也是采用<code class="default-size">Hash</code>。如下：
+	
+	redis> HSET user:<userId>:message:ur system 1//1条未读系统消息
+	(integer) 1
+	redis> HINCRBY user:<userId>:message:ur system 1 //未读系统消息+1
+	(integer) 2
+	redis> HINCRBY user:<userId>:message:ur comment 1 //未读评论消息+1
+	(integer) 1
+	redis> HSET user:<userId>:message:ur system 0//设为系统消息已读
+	(integer) 1
+	redis> HGETALL user:<userId>:message:ur //获取这key hashkey 和value
+	1) "system"
+	2) "0"
+	3) "comment"
+	4) "1"
+	
 ##8. 将Redis用作消息队列
 
+当在集群环境时候，java <code class="default-size">ConcurrentLinkedQueue</code> 就无法满足我们需求，此时可以采用Redis的List数据结构实现分布式的消息队列。
 
-
-##最后
+##后记
+如果你有更多有意思的应用场景，欢迎留言或Email我<code class="default-size">kasa.life#gmail.com</code>.

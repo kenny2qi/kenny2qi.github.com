@@ -14,16 +14,16 @@ tags : [java, redis, linux, anti-spam, 分布式架构]
 
 - 首先分析access log，类聚统计出访问量前50 IP
 
-	less guang.com_access.log | awk -F- '{print $1}' | sort | uniq -c | sort -rn | head -n 50 
+<pre><code>less guang.com_access.log | awk -F- '{print $1}' | sort | uniq -c | sort -rn | head -n 50 </code></pre>
 
 - 排除白名单IP 和正常spider（baidu，google...)
 	
-	host 112.94.32.135 //查看可疑ip是不是baidu、google等常规爬虫。
+<pre><code>host 112.94.32.135 //查看可疑ip是不是baidu、google等常规爬虫。</code></pre>
 
 - 分析可以ip 请求时间、频率、路径等，你可以很容易发现这是否是一个spider，下面那明显是一个spider。
 
-	less access.log | grep '112.94.32.135' | less
-	
+<pre><code>less access.log | grep '112.94.32.135' | less</code></pre>
+<pre><code>
 	112.94.32.135 - - [1/Oct/2012:00:00:50 +0800] "GET /baobei/1888476 HTTP/1.1" 200 107876 "-" "Mozilla/4.0"
 	112.94.32.135 - - [1/Oct/2012:00:00:50 +0800] "GET /baobei/1922742 HTTP/1.1" 200 110053 "-" "Mozilla/4.0"
 	112.94.32.135 - - [1/Oct/2012:00:00:50 +0800] "GET /u/1437104 HTTP/1.1" 200 10751 "-" "Mozilla/4.0"
@@ -35,9 +35,11 @@ tags : [java, redis, linux, anti-spam, 分布式架构]
 	112.94.32.135 - - [1/Oct/2012:00:00:51 +0800] "GET /baobei/1733526 HTTP/1.1" 200 97690 "-" "Mozilla/4.0"
 	112.94.32.135 - - [1/Oct/2012:00:00:51 +0800] "GET /u/1437107 HTTP/1.1" 200 10765 "-" "Mozilla/4.0"
 	112.94.32.135 - - [1/Oct/2012:00:00:51 +0800] "GET /baobei/1888475 HTTP/1.1" 200 96415 "-" "Mozilla/4.0"
+</code></pre>
+
 	
 - 既然发现spider，当然要动用<code class="default-size">iptables</code>来封杀这IP, 但很多时候仅仅封一个IP是不够的，因为一般爬虫都是运行在托管机房里面（多台服务器轮换）或者家里ADSL（重新拨号换IP），所以封整个C网段会直接有效得多，当然这样做有可能影响极小数正常用户访问，所以建议一段时间后重新解封这c网段。
-	iptables -A INPUT -i eth0 -j DROP -p tcp --dport 80 -s 112.94.32.0/24    
+<pre><code>iptables -A INPUT -i eth0 -j DROP -p tcp --dport 80 -s 112.94.32.0/24  </code></pre>  
 
 以上可以写成个shell/python脚本，每天执行一次。
  

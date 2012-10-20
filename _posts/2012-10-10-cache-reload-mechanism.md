@@ -21,13 +21,17 @@ tags : [java, redis, cache, highAbility, 分布式架构]
 ##临时解决措施：
 
 由于当时持续大量用户访问，查询DB一直hand住，导致cache一直无法set回去，首页那cache一直处于miss状态，恶性循环，雪崩了。
+
 当时我们立马采取以下措施：
 
 - 调整MYSQL <code class="default-size">tmp_table_size</code>, 关于<code class="default-size">tmp_table_size</code> 请看下面详细描述。
 - 修改MYSQL临时表保存路径（tmpdir）到较大分区 
 - 简化业务逻辑，修改SQL，重新部署。
 
-	**临时表使用内存(tmp_table_size)：**当我们进行一些特殊操作如需要使用临时表才能完成的join，Order By，Group By 等等，MySQL 可能需要使用到临时表。当我们的临时表较小（小于 tmp_table_size 参数所设置的大小）的时候，MySQL 会将临时表创建成内存临时表，只有当 tmp_table_size 所设置的大小无法装下整个临时表的时候，MySQL 才会将该表创建成 MyISAM 存储引擎的表存放在磁盘上。不过，当另一个系统参数 max_heap_table_size 的大小还小于 tmp_table_size 的时候，MySQL 将使用 max_heap_table_size 参数所设置大小作为最大的内存临时表大小，而忽略 tmp_table_size 所设置的值。而且 tmp_table_size 参数从 MySQL 5.1.2 才开始有，之前一直使用 max_heap_table_size.
+<pre><code>
+**临时表使用内存(tmp_table_size)：**当我们进行一些特殊操作如需要使用临时表才能完成的join，Order By，Group By 等等，MySQL 可能需要使用到临时表。当我们的临时表较小（小于 tmp_table_size 参数所设置的大小）的时候，MySQL 会将临时表创建成内存临时表，只有当 tmp_table_size 所设置的大小无法装下整个临时表的时候，MySQL 才会将该表创建成 MyISAM 存储引擎的表存放在磁盘上。不过，当另一个系统参数 max_heap_table_size 的大小还小于 tmp_table_size 的时候，MySQL 将使用 max_heap_table_size 参数所设置大小作为最大的内存临时表大小，而忽略 tmp_table_size 所设置的值。而且 tmp_table_size 参数从 MySQL 5.1.2 才开始有，之前一直使用 max_heap_table_size.
+</code></pre>
+
 
 
 ##长期解决措施：终于到本文的重点**Cache Reload机制设计和实现**

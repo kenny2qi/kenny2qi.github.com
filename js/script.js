@@ -55,7 +55,7 @@ $(function(){
 	if(($.browser.msie && $.browser.version=="9.0") || $.browser.webkit || $.browser.safari || $.browser.mozilla || $.browser.opera ){
 	}else{
 		if($.cookie("notip")!="yes"){
-		$("body").append('<div class="tipbox"><div class="tipbox-skin"><a class="close" href="javascript:;">x 关闭</a><p>我们检测到你使用的非高级浏览器，无法正常浏览，推荐下载<a href="http://www.google.cn/intl/zh-CN/chrome/browser/" target="_blank">Chrome浏览器</a></p></div></div>');
+		$("body").append('<div class="tipbox"><div class="tipbox-skin"><a class="close" href="javascript:;">x 关闭</a><p>我们检测到你使用的是非高级浏览器，无法正常浏览，推荐下载<a href="http://www.google.cn/intl/zh-CN/chrome/browser/" target="_blank">Chrome浏览器</a></p></div></div>');
 		$(".close").click(function(){
 			$(".tipbox").hide();
 			$.cookie("notip","yes",{expires:30});

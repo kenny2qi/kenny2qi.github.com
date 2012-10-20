@@ -149,6 +149,5 @@ Redis 存储结构(更多Redis 的应用场景，请看[Redis 在电商中的实
 
 	
 ##后记
-有同学说，还可以根据User-Agent来屏蔽spider，但我认为这没什么意义，现在的恶意spider都已经将User-Agent伪装成普通浏览器或者正规爬虫的User-Agent了，我也不再这里提了。
 
-我认为，结合以上2种策略，可以很大程度打击那些恶意spider的攻击，保证网站正常运行。如果你有更多奇淫怪招，欢迎留言或Email我<code class="default-size">kasa.life#gmail.com</code>.
+如果要做的更人性化点，后续可以在网站后台管理系统 增加cache reloadable 的管理工具（删除、修改刷新间隔等）。

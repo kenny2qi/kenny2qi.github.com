@@ -50,49 +50,12 @@ tags : [java, redis, cache, highAbility, 分布式架构]
 下图是guang.com 关于Cache Reload的一小部分架构：
 <img src="/images/showcase_architecture.jpg" alt="部分架构图" >
 
-从上图看到，有一个部署在Daemon server上的<code class="default-size">CacheReloadJob</code>
+主要2个step：
+
+1. 将有需要reload cache 的wrapper保存到redis <code class="default-size">Hash</code>.
+2. 部署在Daemon server上的<code class="default-size">CacheReloadJob</code>，每分钟去redis拿需要reload的cache的hashmap，判断是否到时间refresh cache，如果到，通过Reflection call relevant method 重新reload data和reset 这个cache。
 
 **Cache Reload mechanism 实现：**
-
-CacheReloadJob:
-
-	public class CacheReloadJob {
-
-		private static Logger logger = LoggerFactory.getLogger(CacheReloadJob.class);
-		@Autowired
-		MyXMemcachedClient myXMemcachedClient;
-		
-		@Resource(name="objectHashOperations")
-		private HashOperations<String, String, MethodInvocationWrapper> objectHashOperations;
-		
-		public void reloadCache(){
-			logger.info("Try to reload cache");
-			Map<String, MethodInvocationWrapper>  map = objectHashOperations.entries(RedisKeyEnum.CACHE_RELOAD.getKey());
-			ThreadFactory tf = new NamedThreadFactory("CACHE_RELOAD_THREADPOOL");
-			ExecutorService threadPool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors(), tf);
-			for (String key: map.keySet()) {
-				final MethodInvocationWrapper wrapper = map.get(key);
-				if(wrapper.getWriteTime()+wrapper.getDuration()>System.currentTimeMillis()){//刷新时间大于当前时间
-					threadPool.execute(new Runnable() {
-						@Override
-						public void run() {
-							refreshCache(wrapper);
-						}
-					});
-				}
-			}
-			
-			logger.info("completed with reloaded cache");
-		}
-		
-		private void refreshCache(MethodInvocationWrapper wrapper){
-			Object object = ReflectionUtils.invokeMethod(SpringContextHolder.getBean(wrapper.getObjectName()), wrapper.getMethodName(), wrapper.getParameterTypes(), wrapper.getArgs());
-			myXMemcachedClient.set(wrapper.getKey(), wrapper.getExpiredTime(), object);
-			wrapper.setWriteTime(System.currentTimeMillis());
-			objectHashOperations.put(RedisKeyEnum.CACHE_RELOAD.getKey(), wrapper.getKey(), wrapper);
-		}
-		
-	}
 
 set memcached with reload mechanism if necessary:
 	
@@ -137,13 +100,53 @@ set memcached with reload mechanism if necessary:
 		} 
 	}
 
-Redis 存储结构：
+CacheReloadJob:
 
-	redis> HMSET cache:reload:memcached <memcache_key> <MethodInvocationWrapper>
+	public class CacheReloadJob {
+
+		private static Logger logger = LoggerFactory.getLogger(CacheReloadJob.class);
+		@Autowired
+		MyXMemcachedClient myXMemcachedClient;
+		
+		@Resource(name="objectHashOperations")
+		private HashOperations<String, String, MethodInvocationWrapper> objectHashOperations;
+		
+		public void reloadCache(){
+			logger.info("Try to reload cache");
+			Map<String, MethodInvocationWrapper>  map = objectHashOperations.entries(RedisKeyEnum.CACHE_RELOAD.getKey());
+			ThreadFactory tf = new NamedThreadFactory("CACHE_RELOAD_THREADPOOL");
+			ExecutorService threadPool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors(), tf);
+			for (String key: map.keySet()) {
+				final MethodInvocationWrapper wrapper = map.get(key);
+				if(wrapper.getWriteTime()+wrapper.getDuration()>System.currentTimeMillis()){//刷新时间大于当前时间
+					threadPool.execute(new Runnable() {
+						@Override
+						public void run() {
+							refreshCache(wrapper);
+						}
+					});
+				}
+			}
+			
+			logger.info("completed with reloaded cache");
+		}
+		
+		private void refreshCache(MethodInvocationWrapper wrapper){
+			Object object = ReflectionUtils.invokeMethod(SpringContextHolder.getBean(wrapper.getObjectName()), wrapper.getMethodName(), wrapper.getParameterTypes(), wrapper.getArgs());
+			myXMemcachedClient.set(wrapper.getKey(), wrapper.getExpiredTime(), object);
+			wrapper.setWriteTime(System.currentTimeMillis());
+			objectHashOperations.put(RedisKeyEnum.CACHE_RELOAD.getKey(), wrapper.getKey(), wrapper);
+		}
+		
+	}
+
+
+Redis 存储结构(更多Redis 的应用场景，请看[Redis 在电商中的实际应用场景](http://kenny7.com/2012/09/redis-usage-scenario.html) )：
+
+	redis> HSET cache:reload:memcached <memcache_key> <MethodInvocationWrapper>
 	OK
 	redis> HGETALL cache:reload:memcached
 
-更多Redis 的应用场景，请看[Redis 在电商中的实际应用场景](http://kenny7.com/2012/09/redis-usage-scenario.html)
 	
 ##后记
 有同学说，还可以根据User-Agent来屏蔽spider，但我认为这没什么意义，现在的恶意spider都已经将User-Agent伪装成普通浏览器或者正规爬虫的User-Agent了，我也不再这里提了。

@@ -6,7 +6,7 @@ category : cache
 tags : [java, redis, cache, highAbility, 分布式架构]
 ---
 
-半年前，Guang.com曾发生一次由于首页部分cache失效，导致网站故障。
+大概半年前，Guang.com曾发生一次由于首页部分cache失效，导致网站故障。
 ##故障分析：
 当时逛正在做推广，流量突然暴增，QPS达到500，当首页部分cache失效时，需要查询DB，
 但由于这部分业务逻辑很复杂导致这SQL包含多表join、groupby、orderby等，执行需要1s，产生的大量临时表，in-memory都装不下，变成on-disk的临时表，但当时放临时表的disk分区容量只有20G，很快disk也爆了，结果显然网站打不开了。
@@ -42,19 +42,21 @@ tags : [java, redis, cache, highAbility, 分布式架构]
 
 前者适合实时性不高，但更新频繁的；后者适合实时性要求高，更新不太频繁的应用。
 
-**Cache Reload mechanism 设计**
+**Cache Reload mechanism 设计：**
 
 根据逛当时业务需求，选择被动更新方式，但这种方式的弊端是当cache失效那个点，刚好遇上高并发的话，就会发生上述的雪崩情况。
 
 所以我在想这种使用率高的cache，就不用设置time out或time out设置足够大，然后按业务需求时间间隔定期reload/refresh cache data from DB，这cache就不会出现失效情况，也不出现雪崩现象。
 
-下面那是guang.com 关于Cache Reload的一小部分架构：
+下图是guang.com 关于Cache Reload的一小部分架构：
 <img src="/images/showcase_architecture.jpg" alt="部分架构图" >
 
 从上图看到，有一个部署在Daemon server上的<code class="default-size">CacheReloadJob</code>
 
-**Cache Reload mechanism 实现**
-**CacheReloadJob:**
+**Cache Reload mechanism 实现：**
+
+CacheReloadJob:
+
 	public class CacheReloadJob {
 
 		private static Logger logger = LoggerFactory.getLogger(CacheReloadJob.class);
@@ -93,7 +95,7 @@ tags : [java, redis, cache, highAbility, 分布式架构]
 		
 	}
 
-**set memcached with reload mechanism if necessary:**
+set memcached with reload mechanism if necessary:
 	
 	/**
 	 * <h2>set cache with reload mechanism </h2>
@@ -136,7 +138,7 @@ tags : [java, redis, cache, highAbility, 分布式架构]
 		} 
 	}
 
-**Redis 存储结构：**
+Redis 存储结构：
 
 	redis> HMSET cache:reload:memcached <memcache_key> <MethodInvocationWrapper>
 	OK

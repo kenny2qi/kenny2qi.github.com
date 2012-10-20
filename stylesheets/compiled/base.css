@@ -934,6 +934,6 @@ font-family:"kepler-std-1","kepler-std-2",sans-serif;
 }
 
 .tipbox { position:fixed;width:390px;height:auto;z-index:999; } 
-.tipbox-skin { padding:15px;position:relative;background:#fff;color:#444;text-shadow:none;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;webkit-box-shadow:0 10px 25px rgba(0, 0, 0, 0.5);-moz-box-shadow:0 10px 25px rgba(0, 0, 0, 0.5);box-shadow:0 10px 25px rgba(0, 0, 0, 0.5); } 
+.tipbox-skin { padding:15px;position:relative;background:#fff;color:#444;text-shadow:none;border:5px solid #ddd; } 
 .tipbox p { line-height:30px;padding:10px 0;margin:0; } 
 .tipbox .close { position:absolute;top:5px;right:9px;color:#999;line-height:1.2;padding:0 3px;z-index:1;font:11px "Comic Sans MS",sans-serif; } 

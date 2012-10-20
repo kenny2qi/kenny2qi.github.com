@@ -11,7 +11,7 @@ tags : [java, redis, cache, highAbility, 分布式架构]
 当时逛正在做推广，流量突然暴增，QPS达到500，当首页部分cache失效时，需要查询DB，
 但由于这部分业务逻辑很复杂导致这SQL包含多表join、groupby、orderby等，执行需要1s，产生的大量临时表，in-memory都装不下，变成on-disk的临时表，但当时放临时表的disk分区容量只有20G，很快disk也爆了，结果显然网站打不开了。
 
-**总结为几点：**
+总结为几点：
 
 - SQL语句优化不足
 - MYSQL <code class="default-size">tmp_table_size</code> 配置太小
@@ -34,9 +34,8 @@ tags : [java, redis, cache, highAbility, 分布式架构]
 
 ##长期解决措施：终于到本文的重点**Cache Reload机制设计和实现**
 
-**cache更新方式介绍：**
+在讲Cache Reload机制设计和实现之前，先看看cache更新方式：
 
-在介绍Cache Reload机制设计和实现之前，先看看cache更新方式：
 1. 是缓存time out，让缓存失效，重查。（被动更新）
 2. 是由后端通知更新，一量后端发生变化，通知前端更新。（主动更新）
 

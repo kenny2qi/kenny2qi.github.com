@@ -1,7 +1,7 @@
 ---
 layout: post
 summary-only: yes
-title : 	Trident - a high-level abstraction for realtime computation
+title : [Mark]Trident - a high-level abstraction for realtime computation
 category : java
 tags : [java, storm, Trident, 分布式计算]
 ---

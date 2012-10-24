@@ -2,6 +2,7 @@
 layout: nil
 ---
 <?xml version="1.0" encoding="utf-8"?>
+<!--
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>KENNY的喃喃自语</title>
     <link href="http://kenny7.com/atom.xml" rel="self"/>
@@ -36,3 +37,4 @@ layout: nil
     </entry>
     {% endfor %}
 </feed>
+-->

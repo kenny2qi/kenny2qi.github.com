@@ -1,7 +1,7 @@
 ---
 layout: post
 summary-only: yes
-title : [Mark]A Distributed Systems Reading List	
+title : 『Mark』A Distributed Systems Reading List	
 category : 架构
 tags : [分布式架构]
 ---

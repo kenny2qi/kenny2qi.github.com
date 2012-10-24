@@ -1,7 +1,7 @@
 ---
 layout: post
 summary-only: yes
-title : [Mark]知名网站的技术发展历程	
+title : 『Mark』知名网站的技术发展历程	
 category : 架构
 tags : [分布式架构]
 ---

@@ -8,7 +8,7 @@ tags : [java, redis, cache, highAbility, 分布式架构]
 
 大概半年前，Guang.com曾发生一次由于首页部分cache失效，导致网站故障。
 ##故障分析：
-当时逛正在做推广，流量突然暴增，QPS达到500，当首页部分cache失效时，需要查询DB，
+当时逛正在做推广，流量突然暴增，QPS达到1000+，当首页部分cache失效时，需要查询DB，
 但由于这部分业务逻辑很复杂导致这SQL包含多表join、groupby、orderby等，执行需要1s，产生的大量临时表，in-memory都装不下，变成on-disk的临时表，但当时放临时表的disk分区容量只有20G，很快disk也爆了，结果显然网站打不开了。
 
 总结为几点：

@@ -51,10 +51,12 @@ tags : [网络安全, chrome]
 
 <hr>
 
-##整个分析过程（不感冒的同学 可以忽略）
+##整个分析过程
 
-**对比Chrome和Firefox下news.163.com的页面和HTML源码：**
-Chrome：
+对比Chrome和Firefox下news.163.com的页面和HTML源码：
+
+**Chrome：**
+
 <img src="/images/163_chrome.jpg" alt="Chrome打开的网易">
 
 HTML源码:
@@ -63,8 +65,10 @@ HTML源码:
 		<div id="__news.163.com_aq"><iframe src="http://www.iicdn.com/www/delivery/afr.php?zoneid=35&amp;refresh=60" height="250" width="300" name="a47abb2d" id="a47abb2d" scrolling="NO" frameborder="0"></iframe></div>
 	</div>
 
-Firefox：
+**Firefox：**
+
 <img src="/images/163_firefox.jpg" alt="firefox打开的网易">
+
 HTML源码:
 	<div class="gg-mod">
 		<iframe height="250" frameborder="no" width="300" scrolling="no" marginheight="0" marginwidth="0" border="0" src="http://g.163.com/r?site=netease&amp;affiliate=news&amp;cat=homepage&amp;type=logo300x250&amp;location=1"></iframe>
@@ -131,5 +135,5 @@ HTML源码:
 
 ##最后
 
-期待Chrome的进一步完善，严重鄙视那些注入广告的人和SP机构，Screw U!
+期待Chrome的进一步完善，严重鄙视那些注入广告的人和SP机构，赚钱可以，但请不要太流氓!
 

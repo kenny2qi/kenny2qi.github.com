@@ -14,23 +14,21 @@ tags : [网络安全, chrome]
 - 所安装Chrome插件（plugin）中有部分做了手脚。
 
 <img src="/images/Smooth_Gestures_view.jpg" alt="Smooth_Gestures_view">
-最后经过一些列分析（具体分析过程如下），发现这一切都是Chrome 著名手势插件 Smooth Gestures搞出来，极大侵犯用户私隐：
+最后经过一些列分析（具体分析过程如下），发现这一切都是Chrome 著名手势插件<code class="default-size">Smooth Gestures</code>搞出来，极大侵犯用户私隐：
 
 1. **窃取用户浏览记录、搜索记录等操作信息。**
 2. **篡改网站代码，注入广告。**
 
 万幸的事，Smooth Gestures 这位外国作者还有那么一点点良知，没有窃取用户的cookie，不然后果会好严重。
 
-虽然这个插件在2011年已经被Google下架，由于没有通知（这点Google做得有所欠缺），相信还有很多用户还在继续使用，所以强烈建议：
+虽然这个插件在2011年已经被Google下架，由于没有通知（这点Google做得有所欠缺），相信还有很多用户还在继续使用，所以强烈建议采取以下措施:
 
-**采取以下措施:**
-
-1. 立刻停用<code class="default-size">Smooth Gestures</code>。
-2. 检查所有非by Google插件的安全性（嘿嘿，找个懂代码的同学帮你吧），实在不行先暂时停用这些plugin吧。
+1. 立刻停用Smooth Gestures。
+2. 检查所有非by Google插件的安全性（嘿嘿，找个懂代码的同学帮你吧），实在不行先暂时停用那些plugin吧。
 3. 尽量不要安装来历不明的插件，非要安装找个懂代码同学帮你看下吧。
 
 
-**By Google 的插件List https://chrome.google.com/webstore/category/collection/by_google **
+**Google官方的插件List：  https://chrome.google.com/webstore/category/collection/by_google **
 
 <img src="/images/chrome_webstore_by_google.jpg" alt="chrome_webstore_by_google">
 
@@ -40,12 +38,10 @@ tags : [网络安全, chrome]
 
 ##浏览器安全的一些思考
 
-难道IE <code class="default-size">ActiveX控件</code> 和FireFox的plugin 会没有这些安全隐患吗？我敢说肯定不比Chrome要少，只是很难去发现和辨别而已（没有源码检查功能）。
+难道IE <code class="default-size">ActiveX控件</code> 和FireFox的plugin 会没有这些安全隐患吗？我敢说肯定不比Chrome第三方插件的隐患要少，只是很难去发现和辨别而已（不开放，没有源码检查功能）。
 
+Chrome依然是最优秀的浏览器，没有之一，Chrome webstore也提供各种丰富的插件。
 
-##最后
-
-毫无疑问Chrome是最优秀的浏览器，没有之一，Chrome webstore也提供各种丰富的插件。
 但要想让普通用户可以放心去安装使用第三方插件，必须做几点改进：
 
 1. 完善通知机制，像这些有安全隐患的插件被下架，要立刻弹 alert 通知用户让用户选择是否停用。
@@ -131,4 +127,7 @@ HTML源码:
 		24E5))
 	}
 
-##后记
+##最后
+
+我会继续使用Chrome，期待Chrome的进一步完善，鄙视那些注入广告的人和SP机构！Screw U!
+

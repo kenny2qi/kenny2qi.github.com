@@ -10,14 +10,16 @@ tags : [网络安全, chrome]
 
 如果不是网易、豆瓣自家干的，那是谁干呢! 只有2个可能性：
 
-- SP（网络营运商，电信，网通，华数...) DNS挟持后插入的广告。这种属于常见现象，我现在用的华数，以前用的电信都干过这种无耻流氓的事！个人亲身经历: http://weibo.com/1656692122/ysVsPF4N4
+- SP（网络营运商，电信，网通，华数...) DNS挟持后注入的广告。这种属于常见现象，我现在用的华数，以前用的电信都干过这种无耻流氓的事！个人亲身经历: http://weibo.com/1656692122/ysVsPF4N4
 - 所安装Chrome插件（plugin）中有部分做了手脚。
 
-最后经过一些列分析（具体分析过程如下），最终发现Chrome 著名手势插件 Smooth Gestures重大安全问，极大侵犯用户私隐：
 <img src="/images/Smooth_Gestures_view.jpg" alt="Smooth_Gestures_view">
+最后经过一些列分析（具体分析过程如下），发现这一切都是Chrome 著名手势插件 Smooth Gestures搞出来，极大侵犯用户私隐：
 
-1. **窃取用户浏览记录等操作信息。**
-2. **篡改网站代码，插入广告。**
+1. **窃取用户浏览记录、搜索记录等操作信息。**
+2. **篡改网站代码，注入广告。**
+
+万幸的事，Smooth Gestures 这位外国作者还有那么一点点良知，没有窃取用户的cookie，不然后果会好严重。
 
 虽然这个插件在2011年已经被Google下架，由于没有通知（这点Google做得有所欠缺），相信还有很多用户还在继续使用，所以强烈建议：
 
@@ -32,7 +34,24 @@ tags : [网络安全, chrome]
 
 <img src="/images/chrome_webstore_by_google.jpg" alt="chrome_webstore_by_google">
 
-	NOTE: 以上不单单指Chrome，还有基于Chrome开源<code class="default-size">chromium</code>，如<code class="default-size">360浏览器极速版</code>，<code class="default-size">搜狗高速浏览器</code>，<code class="default-size">猎豹浏览器</code>等。
+<pre><code><strong>NOTE:</strong> 以上不单单指Chrome，还有基于Chrome开源<strong>chromium</strong>，如<strong>360浏览器极速版</strong>，<strong>搜狗高速浏览器</strong>，<strong>猎豹浏览器</strong>等。</code></pre> 	
+
+
+
+##浏览器安全的一些思考
+
+难道IE <code class="default-size">ActiveX控件</code> 和FireFox的plugin 会没有这些安全隐患吗？我敢说肯定不比Chrome要少，只是很难去发现和辨别而已（没有源码检查功能）。
+
+
+##最后
+
+毫无疑问Chrome是最优秀的浏览器，没有之一，Chrome webstore也提供各种丰富的插件。
+但要想让普通用户可以放心去安装使用第三方插件，必须做几点改进：
+
+1. 完善通知机制，像这些有安全隐患的插件被下架，要立刻弹 alert 通知用户让用户选择是否停用。
+2. 增加审查/permission机制，像Android那样，每个插件都要声明需要的permission，在安装时候让用户知道明了。
+3. 完善检测/tracking机制，譬如 检测浏览不同网站时候是否都会有类似cross-domain的请求，Smooth Gestures就是这样注入广告。
+4. 完善举报功能，直接在插件功能list上增加举报按钮。
 
 
 

@@ -27,9 +27,11 @@ title: KENNY的喃喃自语
     {% if post.summary-only %}
         <div class="summary">
         {{ post.content }}
+		 <p> <a href="{{ post.url }}" >阅读全文…</a></p>
         </div>        
     {% else %}
        <p class="post-summary grid_14 prefix_3 alpha omega">{{ post.summary }}</p>
+	   <p> <a href="{{ post.url }}" >阅读全文…</a></p>
     {% endif %}    
     <div class="clear"></div>
   </section>

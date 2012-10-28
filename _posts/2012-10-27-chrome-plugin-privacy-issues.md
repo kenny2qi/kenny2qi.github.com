@@ -1,9 +1,9 @@
 ---
 layout: post
-summary-only: yes
 title : 关于Chrome第三方插件的安全隐患
 category : 网络安全
 tags : [网络安全, chrome]
+summary: <img src="/images/163_chrome.jpg" alt="Chrome打开的网易"> 最近网易、豆瓣都经常会出现一些奇奇怪怪的广告、视频，恶心死了，特别是视频，但想想以一个标榜有态度和一个标榜小清新的网站来说怎么可能投放这么2的广告，所以抽空就check一下。
 ---
 <img src="/images/163_chrome.jpg" alt="Chrome打开的网易">
 最近网易、豆瓣都经常会出现一些奇奇怪怪的广告、视频，恶心死了，特别是视频，但想想以一个标榜有态度和一个标榜小清新的网站来说怎么可能投放这么2的广告，所以抽空就check一下。

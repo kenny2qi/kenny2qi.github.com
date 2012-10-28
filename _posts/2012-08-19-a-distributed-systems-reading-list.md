@@ -187,4 +187,3 @@ tags : [分布式架构]
 <ul>
 <li><a href="http://www.addsimplicity.com.nyud.net:8080/downloads/eBaySDForum2006-11-29.pdf">SD Forum 2006</a></li>
 </ul>
-、

@@ -1,7 +1,7 @@
 ---
 layout: post
 summary-only: yes
-title : Chrome第三方插件的安全隐患
+title : 关于Chrome第三方插件的安全隐患
 category : 网络安全
 tags : [网络安全, chrome]
 ---
@@ -14,7 +14,7 @@ tags : [网络安全, chrome]
 - 所安装Chrome插件（plugin）中有部分做了手脚。
 
 <img src="/images/Smooth_Gestures_view.jpg" alt="Smooth_Gestures_view">
-最后经过一些列分析（具体分析过程如下），发现这一切都是Chrome 著名手势插件<code class="default-size">Smooth Gestures</code>搞出来，极大侵犯用户私隐：
+最后经过一些列分析（具体分析过程如下），发现这一切都是Chrome 著名第三方手势插件<code class="default-size">Smooth Gestures</code>搞出来，其极大侵犯用户私隐：
 
 1. **窃取用户浏览记录、搜索记录等操作信息。**
 2. **篡改网站代码，注入广告。**
@@ -40,16 +40,16 @@ tags : [网络安全, chrome]
 
 难道IE <code class="default-size">ActiveX控件</code> 和FireFox的plugin 会没有这些安全隐患吗？我敢说肯定不比Chrome第三方插件的隐患要少，只是很难去发现和辨别而已（不开放，没有源码检查功能）。
 
-Chrome依然是最优秀的浏览器，没有之一，Chrome webstore也提供各种丰富的插件。
+**Chrome浏览器依然是网民最佳的选择、最优秀的浏览器，没有之一，Chrome webstore也提供各种丰富的插件。**
 
 但要想让普通用户可以放心去安装使用第三方插件，必须做几点改进：
 
-1. 完善通知机制，像这些有安全隐患的插件被下架，要立刻弹 alert 通知用户让用户选择是否停用。
-2. 增加审查/permission机制，像Android那样，每个插件都要声明需要的permission，在安装时候让用户知道明了。
-3. 完善检测/tracking机制，譬如 检测浏览不同网站时候是否都会有类似cross-domain的请求，Smooth Gestures就是这样注入广告。
-4. 完善举报功能，直接在插件功能list上增加举报按钮。
+1. **完善通知机制，像这些有安全隐患的插件被下架，要立刻弹 alert 通知用户让用户选择是否停用。**
+2. **增加审查/permission机制，像Android那样，每个插件都要声明需要的permission，在安装时候让用户知道明了。**
+3. **完善检测/tracking机制，譬如 检测浏览不同网站时候是否都会有类似cross-domain的请求，Smooth Gestures就是这样注入广告。**
+4. **完善举报功能，直接在插件功能list上增加举报按钮。**
 
-
+<hr>
 
 ##整个分析过程（不感冒的同学 可以忽略）
 
@@ -127,7 +127,9 @@ HTML源码:
 		24E5))
 	}
 
+<hr>
+
 ##最后
 
-我会继续使用Chrome，期待Chrome的进一步完善，鄙视那些注入广告的人和SP机构！Screw U!
+期待Chrome的进一步完善，严重鄙视那些注入广告的人和SP机构，Screw U!
 

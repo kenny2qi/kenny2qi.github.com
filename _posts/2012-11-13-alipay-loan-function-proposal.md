@@ -1,9 +1,9 @@
 ---
 layout: post
-title : 【产品设计】向熟人借款功能 Proposal for alipay
+title : 【产品想法】支付宝的向熟人借款功能
 category : 产品想法
 tags : [产品设计, 产品体验]
-summary: <img src="/images/163_chrome.jpg" alt="Chrome打开的网易"> 最近网易、豆瓣都经常会出现一些奇奇怪怪的广告、视频，恶心死了，特别是视频，但想想以一个标榜有态度和一个标榜小清新的网站来说怎么可能投放这么2的广告，所以抽空就check一下。
+summary-only: yes
 ---
 前天，一个朋友的同学问他借一笔数目不小的钱，这朋友稍微犹豫了一下还是将钱转过去了。由此萌生了<code class="default-size">向熟人借款</code>这功能的想法。
 
@@ -20,10 +20,6 @@ summary: <img src="/images/163_chrome.jpg" alt="Chrome打开的网易"> 最近�
 所以我强烈建议<code class="default-size">支付宝</code>推出<code class="default-size">向熟人借款</code>（或者叫『我要借款』）功能，
 
 
-
-
-
-
 支付宝仅充当一个中间人的角色，记录双方互动记录。我不知道这是否还需要什么别的牌照
 
 撇开在中国的合法性（中国的法律我也搞不懂，熟悉的朋友麻烦解答下），<code class="default-size">向熟人借款</code>我觉得这需求是很有市场。
@@ -32,15 +28,15 @@ summary: <img src="/images/163_chrome.jpg" alt="Chrome打开的网易"> 最近�
 
 
 
-##借款的流程图
+##借款的流程图：
 
 <img src="/images/flow_loan_bollow.png" alt="借款的流程图"> 
 
-##稍微设计了下借款页面
+##借款页面：
 
 <img src="/images/loan_view.jpg" alt="借款页面"> 
 
-##还款的流程图
+##还款的流程图：
 
 <img src="/images/flow_loan_payback.png" alt="还款的流程图"> 
 

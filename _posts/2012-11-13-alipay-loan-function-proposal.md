@@ -1,10 +1,13 @@
 ---
 layout: post
-title : 【产品想法】向熟人借款 功能提议
+title : 【产品想法】向熟人借款的功能
 category : 产品想法
 tags : [产品设计, 产品体验]
 summary-only: yes
 ---
+<p><img src="/images/org_loan_view.jpg" alt="借款页面"></p>
+<p style="font-size: 23px;">WoW, 支付宝的新功能？No啦，这只是我YY出来的<strong>向熟人借款</strong>借款页面。</p>
+<br>
 前天，一个朋友的同学问他借一笔数目不小的钱，这朋友稍微犹豫了一下还是将钱转过去了。由此萌生了<strong>向熟人借款</strong>这功能的想法。
 
 现在很多人借钱给朋友/亲戚的时候，多多少少会有一点顾虑、犹豫，特别是在数目比较大情况下，WHY? 
@@ -32,9 +35,6 @@ summary-only: yes
 
 小弟不才，抽了点时间画了几个图，没细想，也许有不严谨地方，凑合看一下吧，-_-。
 
-##借款页面：
-
-<img src="/images/loan_view.jpg" alt="借款页面"> 
 
 ##借款的流程图：
 

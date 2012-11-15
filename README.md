@@ -1,1 +1,0 @@
-# [kenny7.com](http://kenny7.com) #

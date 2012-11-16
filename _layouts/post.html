@@ -33,13 +33,16 @@ layout: post-layout
   <div id="post-body">
     {{ content }}
   </div>
-  <p class="alt-font tight">
-    分类：&nbsp;
+
+  <div class="clear"></div>
+  <!--
+  <div>
+  分类：&nbsp;
     {% for category in page.categories %}
     <a href="/categories/{{ category }}" title="{{ category }}" rel="category tag">{{ category }}</a>
     {% endfor %}
-  </p>
-  <div class="clear"></div>
+  </div>
+  -->
   <div id="disqus_thread"></div>
 	<script type="text/javascript">
 		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

@@ -16,7 +16,7 @@ Usage:
     
   This helper can be seen in use at: ../_layouts/default.html
 -->{% endcomment %}
-
+{% assign BASE_PATH = "/categories.html" %}
 {% if site.JB.categories_list.provider == "custom" %}
   {% include custom/categories_list %}
 {% else %}

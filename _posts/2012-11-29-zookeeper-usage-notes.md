@@ -35,13 +35,13 @@ summary-only: yes
 - 有时候会由于数据文件出错（READ DATA LOG ERROR)导致无法启动ZK，在确保Leader正常运行情况下，可以删除本地data 和 dataLog，重新启动ZK，通过Leader同步数据。
 
 - 一些常用的命令
-
-	echo stat|nc localhost 2281 //输出server简要状态和连接的客户端信息
+<pre><code>echo stat|nc localhost 2281 //输出server简要状态和连接的客户端信息
 	echo conf|nc localhost 2281 //输出server的详细配置信息
 	echo cons|nc localhost 2281	//输出指定server上所有客户端连接的详细信息
 	echo wchs|nc localhost 2281	//列出所有watcher信息概要信息，数量等
 	echo wchc|nc localhost 2281	//列出所有watcher信息，以watcher的session为归组单元排列
-	echo mntr|nc localhost 2281	//输出一些ZK运行时信息，通过对这些返回结果的解析，可以达到监控的效果
+	echo mntr|nc localhost 2281	//输出一些ZK运行时信息，通过对这些返回结果的解析，可以达到监控的效果</code></pre>
+	
 
 - watcher绑定与watches event触发对应关系表
 

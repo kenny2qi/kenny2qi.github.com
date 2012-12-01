@@ -9,13 +9,11 @@ summary-only: yes
 前段时间为Guang.com引入了Zookeeper，主要用于存储一些动态config/data，分布式锁，负载均衡，服务器监控等。现在，mark down一下zookeeper使用的注意事项和一些总结。
 
 - Zookeeper默认不会自动清理快照和事务日志，如果不用作数据备份，建议开启自动清理(3.4.0后可以使用）。
-	<pre><code>
-	# The number of snapshots to retain in dataDir 
+	<pre><code># The number of snapshots to retain in dataDir 
 	autopurge.snapRetainCount=3
 	# Purge task interval in hours
 	# Set to "0" to disable auto purge feature
-	autopurge.purgeInterval=1
-	</code></pre>
+	autopurge.purgeInterval=1</code></pre>
 	
 
 - 客户端调用getData()，ZK client不保证数据是最新的，有可能有延时latency情况，如果对数据精确性要求很高，需要先调用 sync()。

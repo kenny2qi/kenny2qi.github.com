@@ -10,10 +10,8 @@ summary-only: yes
 
 - Zookeeper默认不会自动清理快照和事务日志，如果不用作数据备份，建议开启自动清理(3.4.0后可以使用）。
 	<pre><code># The number of snapshots to retain in dataDir 
-autopurge.snapRetainCount=3
-# Purge task interval in hours
-# Set to "0" to disable auto purge feature
-autopurge.purgeInterval=1</code></pre>
+autopurge.snapRetainCount=3 # Purge task interval in hours
+autopurge.purgeInterval=1 # Set to "0" to disable auto purge feature</code></pre>
 	
 
 - 客户端调用getData()，ZK client不保证数据是最新的，有可能有延时latency情况，如果对数据精确性要求很高，需要先调用 sync()。

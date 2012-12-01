@@ -47,7 +47,11 @@ abbr[title], dfn[title] {
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0; 
+  border:1px dashed #ccc;
+  text-align: left;
+  }
+tr{border:1px dashed #ccc;}
 
 hr {
   display: block;

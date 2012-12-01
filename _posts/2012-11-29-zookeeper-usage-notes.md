@@ -9,11 +9,14 @@ summary-only: yes
 前段时间为Guang.com引入了Zookeeper，主要用于存储一些动态config/data，分布式锁，负载均衡，服务器监控等。现在，mark down一下zookeeper使用的注意事项和一些总结。
 
 - Zookeeper默认不会自动清理快照和事务日志，如果不用作数据备份，建议开启自动清理(3.4.0后可以使用）。
+	<pre><code>
 	# The number of snapshots to retain in dataDir 
 	autopurge.snapRetainCount=3
 	# Purge task interval in hours
 	# Set to "0" to disable auto purge feature
 	autopurge.purgeInterval=1
+	</code></pre>
+	
 
 - 客户端调用getData()，ZK client不保证数据是最新的，有可能有延时latency情况，如果对数据精确性要求很高，需要先调用 sync()。
 
@@ -48,71 +51,71 @@ summary-only: yes
 <tbody>
 <tr>
 <th width="200"></th>
-<th colspan="3" width="235"><strong>“/path”</strong></th>
-<th colspan="3" width="238"><strong>“/path/child”</strong></th>
+<th colspan="3" width="235">“/path”</th>
+<th colspan="3" width="238">“/path/child”</th>
 </tr>
 <tr>
 <th width="200"></th>
-<th width="62"><strong>exists</strong></th>
-<th width="70"><strong>getData</strong></th>
-<th width="102"><strong>getChildren</strong></th>
-<th width="66"><strong>exists</strong></th>
-<th width="70"><strong>getData</strong></th>
-<th width="102"><strong>getChildren</strong></th>
+<th width="62">exists</th>
+<th width="70">getData</th>
+<th width="102">getChildren</th>
+<th width="66">exists</th>
+<th width="70">getData</th>
+<th width="102">getChildren</th>
 </tr>
 <tr>
-<td width="200"><strong>create(“/path”)</strong></td>
-<td width="62"><strong>√</strong></td>
-<td width="70"><strong>√</strong></td>
-<td width="102"><strong> </strong></td>
-<td width="66"><strong> </strong></td>
-<td width="70"><strong> </strong></td>
-<td width="102"><strong> </strong></td>
+<td width="200">create(“/path”)</td>
+<td width="62">√</td>
+<td width="70">√</td>
+<td width="102"> </td>
+<td width="66"> </td>
+<td width="70"> </td>
+<td width="102"> </td>
 </tr>
 <tr>
-<td width="200"><strong>delete(“/path”)</strong></td>
-<td width="62"><strong>√</strong></td>
-<td width="70"><strong>√</strong></td>
-<td width="102"><strong>√</strong></td>
-<td width="66"><strong> </strong></td>
-<td width="70"><strong> </strong></td>
-<td width="102"><strong> </strong></td>
+<td width="200">delete(“/path”)</td>
+<td width="62">√</td>
+<td width="70">√</td>
+<td width="102">√</td>
+<td width="66"> </td>
+<td width="70"> </td>
+<td width="102"> </td>
 </tr>
 <tr>
-<td width="200"><strong>setData(“/path”)</strong></td>
-<td width="62"><strong>√</strong></td>
-<td width="70"><strong>√</strong></td>
-<td width="102"><strong> </strong></td>
-<td width="66"><strong> </strong></td>
-<td width="70"><strong> </strong></td>
-<td width="102"><strong> </strong></td>
+<td width="200">setData(“/path”)</td>
+<td width="62">√</td>
+<td width="70">√</td>
+<td width="102"> </td>
+<td width="66"> </td>
+<td width="70"> </td>
+<td width="102"> </td>
 </tr>
 <tr>
-<td width="200"><strong>create(“/path/child”)</strong></td>
-<td width="62"><strong> </strong></td>
-<td width="70"><strong> </strong></td>
-<td width="102"><strong>√</strong></td>
-<td width="66"><strong>√</strong></td>
-<td width="70"><strong>√</strong></td>
-<td width="102"><strong> </strong></td>
+<td width="200">create(“/path/child”)</td>
+<td width="62"> </td>
+<td width="70"> </td>
+<td width="102">√</td>
+<td width="66">√</td>
+<td width="70">√</td>
+<td width="102"> </td>
 </tr>
 <tr>
-<td width="200"><strong>delete(“/path/child”)</strong></td>
-<td width="62"><strong> </strong></td>
-<td width="70"><strong> </strong></td>
-<td width="102"><strong>√</strong></td>
-<td width="66"><strong>√</strong></td>
-<td width="70"><strong>√</strong></td>
-<td width="102"><strong>√</strong></td>
+<td width="200">delete(“/path/child”)</td>
+<td width="62"> </td>
+<td width="70"> </td>
+<td width="102">√</td>
+<td width="66">√</td>
+<td width="70">√</td>
+<td width="102">√</td>
 </tr>
 <tr>
-<td width="200"><strong>setData(“/path/child”)</strong></td>
-<td width="62"><strong> </strong></td>
-<td width="70"><strong> </strong></td>
-<td width="102"><strong> </strong></td>
-<td width="66"><strong>√</strong></td>
-<td width="70"><strong>√</strong></td>
-<td width="102"><strong> </strong></td>
+<td width="200">setData(“/path/child”)</td>
+<td width="62"> </td>
+<td width="70"> </td>
+<td width="102"> </td>
+<td width="66">√</td>
+<td width="70">√</td>
+<td width="102"> </td>
 </tr>
 </tbody>
 </table>

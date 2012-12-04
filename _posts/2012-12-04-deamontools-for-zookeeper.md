@@ -12,12 +12,12 @@ Zookeeper在运行过程中，如果出现一些无法处理的异常，会直�
 ## 安装daemontools
 	
 	mkdir /package
-	chmod 1755 /package
+	chmod 755 /package
 	cd /package
 	wget http://cr.yp.to/daemontools/daemontools-0.76.tar.gz
 	tar zxf daemontools-0.76.tar.gz
 	cd admin/daemontools-0.76
-	打开src/error.h 找到：extern int errno; 改成：#include <errno.h>
+	vim src/error.h 找到：extern int errno; 改成：#include <errno.h>
 	package/install
 
 
@@ -28,12 +28,12 @@ Zookeeper在运行过程中，如果出现一些无法处理的异常，会直�
 	cd /service
 	mkdir zookeeper
 	cd zookeeper
-	touch run
 	vim run
-
+	chmod 755 run
+	
 run内容：
 	
-	#!/bin/sh
+	#!/bin/bash
 	exec 2>&1
 	exec /zk/zookeeper-3.4.4/bin/zkServer.sh start
 
@@ -43,11 +43,15 @@ run内容：
 	//或者可以用nohup以后台方式运行。如下：
 	nohup supervise /service/zookeeper &
 
+	如果出现
+	supervise: fatal: unable to acquire /service/zookeeper/supervise/lock: temporary failure
+	快速rm /service/zookeeper/supervise 重新执行 supervise /service/zookeeper 即可
+	
 验证监控zookeeper是否成功：
 
 	kill zookeeper进程，查看zookeeper的进程是否自动重启
 
-	ps -ax|grep Dzookeeper //查看zookeeper的进程
+	ps -aux|grep Dzookeeper //查看zookeeper的进程
 
 
 <hr/>

@@ -1,11 +1,11 @@
 ---
 layout: post
-summary-only: yes
+summary: <p>For most Architects, "Scale" is the most illusive aspect of software architectures. Not surprisingly, it is also one of the most sort-out goals of todays software design. However, computer scientists do not yet know of a single architecture that can scale for all scenarios. Instead, we design scalable architectures case by case, composing known scalable patterns together and trusting our instincts. Simply put, building a scalable system has become more an art than a science. </p><p>We learn art by learning masterpieces, and scale should not be different! In this post I am listing several architectures that are known to be scalable. Often, architects can use those known scalable architectures as patterns to build new scalable architectures. </p><ol><li><b>LB (Load Balancers) + Shared nothing Units</b> - This model includes a set of units that does not share anything with each other fronted with a load balancer that routes incoming messages to a unit based on some criteria (round-robin, based on load etc.).  A unit can be a single node or a cluster of tightly coupled nodes. As the Load balancer, users can use DNS round robin, hardware load balancers, or software load balancers. It is also possible to build a hierarchy of load balancers that includes combination of above load balancers. The article, <a href="http://db.cs.berkeley.edu/papers/hpts85-nothing.pdf">"The Case for Shared Nothing Architecture"</a> by Michael Stonebraker, discusses these architectures</li></ol>
 title : 『Mark』List of Known Scalable Architecture	
 category : 架构
 tags : [分布式架构]
 ---
-original post：http://srinathsview.blogspot.com/2011/10/list-of-known-scalable-architecture.html
+The original post：http://srinathsview.blogspot.com/2011/10/list-of-known-scalable-architecture.html
 
 For most Architects, "Scale" is the most illusive aspect of software architectures. Not surprisingly, it is also one of the most sort-out goals of todays software design. However, computer scientists do not yet know of a single architecture that can scale for all scenarios. Instead, we design scalable architectures case by case, composing known scalable patterns together and trusting our instincts. Simply put, building a scalable system has become more an art than a science. 
 

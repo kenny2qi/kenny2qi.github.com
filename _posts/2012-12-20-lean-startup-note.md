@@ -1,6 +1,6 @@
 ---
 layout: post
-summary: <p>创业是在极端不确定情况下开发新产品或者新服务。在创业早期，谁是客户，客户认为什么东西有价值都是未知的。</p>  <p>精益创业总结起来就是用3个动词驱动3个名词的循环迭代过程：IPD -&gt; BML ，即：</p>  <pre><code>idea -&gt; (build) -&gt; product -&gt; (measure) -&gt; data -&gt; (learn) </code></pre>  <p>建立<code>validated learning</code>，然后推动下一轮迭代。精益之于创业，等同敏捷之于开发，都强调快速迭代，小步前进，测试(测量)驱动。每次精益产品循环的一个过程都是从<code>未经证实的假设 -&gt; 经证实的认知</code>。</p>  <h2>精益迭代 (Build -&gt; Measure -&gt; Learn)</h2>  <p><img src="lean_startup_lifecycle.png" alt="Lean Startup Lifecycle"></p>  <pre><code>（想法）-&gt; 构建 -&gt;（产品）-&gt; 测量 -&gt;（数据）-&gt; 认知 </code></pre>
+summary: <p>看了Robbin写的精益创业，深有感受，其中大部分观点都总结得很棒，创业不容易，尽量少走点弯路。</p><p>创业是在极端不确定情况下开发新产品或者新服务。在创业早期，谁是客户，客户认为什么东西有价值都是未知的。</p>  <p>精益创业总结起来就是用3个动词驱动3个名词的循环迭代过程：IPD -&gt; BML ，即：</p>  <pre><code>idea -&gt; (build) -&gt; product -&gt; (measure) -&gt; data -&gt; (learn) </code></pre>  <p>建立<code>validated learning</code>，然后推动下一轮迭代。精益之于创业，等同敏捷之于开发，都强调快速迭代，小步前进，测试(测量)驱动。每次精益产品循环的一个过程都是从<code>未经证实的假设 -&gt; 经证实的认知</code>。</p>  <h2>精益迭代 (Build -&gt; Measure -&gt; Learn)</h2>  <p><img src="/images/posts/lean_startup_lifecycle.png" alt="Lean Startup Lifecycle"></p>  <pre><code>（想法）-&gt; 构建 -&gt;（产品）-&gt; 测量 -&gt;（数据）-&gt; 认知 </code></pre>
 title : 『Mark』精益创业(Lean Startup)
 category : 创业
 tags : [精益创业]
@@ -23,7 +23,7 @@ tags : [精益创业]
 
 <h2>精益迭代 (Build -&gt; Measure -&gt; Learn)</h2>
 
-<p><img src="lean_startup_lifecycle.png" alt="Lean Startup Lifecycle"></p>
+<p><img src="/images/posts/lean_startup_lifecycle.png" alt="Lean Startup Lifecycle"></p>
 
 <pre><code>（想法）-&gt; 构建 -&gt;（产品）-&gt; 测量 -&gt;（数据）-&gt; 认知
 </code></pre>
@@ -56,7 +56,7 @@ tags : [精益创业]
 
 <h3>案例IMVU</h3>
 
-<p><img src="imvu.png" alt=""></p>
+<p><img src="/images/posts/imvu.png" alt=""></p>
 
 <p>IMVU做的是切入的是IM市场，提供了三维虚拟人像聊天服务。</p>
 
@@ -91,7 +91,7 @@ tags : [精益创业]
 
 <h3>案例Dropbox</h3>
 
-<p><img src="dropbox.png" alt=""></p>
+<p><img src="/images/posts/dropbox.png" alt=""></p>
 
 <p>Dropbox公司创立时，希望将网盘与不同类型的OS进行无缝集成，该功能的实现需要较高的技术门槛，也需要一定周期。因此在创业初期，Dropbox很难拿出原型呈现给用户和投资者。于是Drew Houston（Dropbox的CEO）做了一个3分钟的视频演示放在网站首页，在演示中描述了产品的功能特点。这段演示令产品的预订者在一夜之间从5000人增至75000人，很好地验证了市场对这一概念的接受程度。</p>
 
@@ -131,14 +131,14 @@ Your browser does not support the video tag.
 
 <p>不是看测量指标的累计总数(虚荣指标)，而是对测量用户进行分组对比测试，观测不同分组之间的数据差异性。</p>
 
-<p><img src="cumulative_metrics.png" alt="">
-<img src="cohort-analysis-visualisation.jpg" alt=""></p>
+<p><img src="/images/posts/cumulative_metrics.png" alt="">
+<img src="/images/posts/cohort-analysis-visualisation.jpg" alt=""></p>
 
 <p>尽管IMVU注册用户数量始终上升，但是同期群分析显示用户黏性没有增长，而且用户付费购买率只有1%。</p>
 
 <h3>案例Grockit的对比测试(A/B Test)和看板管理 (Dashboard management)</h3>
 
-<p><img src="grockit.png" alt=""></p>
+<p><img src="/images/posts/grockit.png" alt=""></p>
 
 <p>Grockit的对比测试：Grockit开发了一项新的功能，先试用再注册。允许用户先体验过产品之后，当必须使用某些功能的时候才注册。这是很多网站的最佳实践，而且从直觉上会认为这样做也能够提升用户的注册率和留存率。但是Grockit开发了此项功能之后，采用对比测试发现，并没有提升任何数据指标，开发此项功能完全无用。</p>
 
@@ -152,7 +152,7 @@ Your browser does not support the video tag.
 </ol>
 
 
-<p><img src="grockit_dashboard.jpg" alt=""></p>
+<p><img src="/images/posts/grockit_dashboard.jpg" alt=""></p>
 
 <p>当D、E和A没有被验证之前，B和C即使已经完成，也不能被挪入已完成队列中。H和I也是同理，在开发中队列已满的情况下，H和I功能不允许进入开发阶段。</p>
 
@@ -169,7 +169,7 @@ Your browser does not support the video tag.
 
 <h3>Votizen的四次转型</h3>
 
-<p><img src="votizen.png" alt=""></p>
+<p><img src="/images/posts/votizen.png" alt=""></p>
 
 <h4>Votizen第一次尝试：选民社交网络</h4>
 
@@ -412,7 +412,7 @@ Your browser does not support the video tag.
 
 <h1>四步创业法 (The Four Steps)</h1>
 
-<p><img src="4steps.png" alt=""></p>
+<p><img src="/images/posts/4steps.png" alt=""></p>
 
 <p>揭示创业公司的发展阶段理论。如上图所示，一个创业公司会经过上述4步，两个发展阶段：</p>
 
@@ -463,7 +463,7 @@ Your browser does not support the video tag.
 
 <h2>技术接纳生命曲线(Technology Adoption Life Circle)</h2>
 
-<p><img src="chasm.jpg" alt=""></p>
+<p><img src="/images/posts/chasm.jpg" alt=""></p>
 
 <p>鸿沟理论 (Chasm theory)</p>
 

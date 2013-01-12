@@ -3,7 +3,7 @@ layout: post
 title : 使用daemontools监控Zookeeper服务 
 category : 监控
 tags : [zookeeper, linux, 监控]
-summary-only: yes
+summary: <p>daemontools(http://cr.yp.to/daemontools.html)是一个管理UNIX下服务的工具集。supervise监视一个服务。它启动一个服务、当服务停掉时它会重起服务。</p><p>Zookeeper在运行过程中，如果出现一些无法处理的异常，会直接退出进程，也就是所谓的快速失败（fail fast）模式。daemontools 能够帮助你监控ZK进程，一旦进程退出后，能够自动重启进程，从而使down掉的机器能够重新加入到集群中去。</p>
 ---
 daemontools(http://cr.yp.to/daemontools.html)是一个管理UNIX下服务的工具集。supervise监视一个服务。它启动一个服务、当服务停掉时它会重起服务。
 

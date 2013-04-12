@@ -81,10 +81,9 @@ SQL注入这种老掉牙的攻击手段，我就不多介绍了。
 
 - cookie保存base64 encode(username|sequence|token)的value。
 - 服务器使用Redis的Hashs结构保存以下这几个值。
-<pre><code>
-Key: user:<username>:cookie
-hashKey: userAgent_ip,userAgent_sequence,userAgent_token,userAgent_expireTime	
-</code></pre>
+
+	Key: user:<username>:cookie
+	hashKey: userAgent_ip,userAgent_sequence,userAgent_token,userAgent_expireTime	
 
 ### 如何验证cookie登录：
 

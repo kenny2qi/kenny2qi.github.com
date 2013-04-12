@@ -1,18 +1,20 @@
 ---
 layout: post
-summary: 
+summary: <p>关于最近网站安全状况，看下乌云上某大厂的漏洞列表就知道了.</p><img src="/images/defeat_list.jpg"><p>触目惊心吧，这仅仅是被曝光的，未被曝光的就更不好说了...</p><p>作为一名程序员，掌握的一些基本网站安全知识，是很有必要的，下面列举一些常见的安全漏洞和对应的防御措施。</p>
 title : 程序员需要掌握的网站安全知识
 category : 网站安全
 tags : [网站安全]
 ---
+<p>
+关于最近网站安全状况，看下乌云上某大厂的漏洞列表就知道了.
+</p>
 
-关于最近网站安全状况，看下乌云上某些大厂的漏洞列表就知道了.
 <img src="/images/defeat_list.jpg"> 
-
+<p>
 触目惊心吧，这仅仅是被曝光的，未被曝光的就更不好说了...
-
+</p><p>
 作为一名程序员，掌握的一些基本网站安全知识，是很有必要的，下面列举一些常见的安全漏洞和对应的防御措施。
-
+</p>
 ## CSRF 攻击
 
 CSRF的全称是Cross Site Request Forgery，就是跨站点伪造请求攻击。
@@ -28,9 +30,9 @@ http://www.wooyun.org/bugs/wooyun-2010-017271#0-tsina-1-80037-397232819ff9a47a7b
 
 最有效的措施，对敏感操作增加CSRF Token验证并尽量采用POST请求方式（虽然GET 也可以增加Token验证）。
 
-	1. 用户第一次请求网站是生成CSRF Token并保存到session中。
-	2. POST请求时，增加Input Field <code class="default-size">csrf_token</code>, 参数值通过session获得。
-	3. 服务器端验证请求类型和Token的合法性。
+1. 用户第一次请求网站是生成CSRF Token并保存到session中。
+2. POST请求时，增加Input Field <code class="default-size">csrf_token</code>, 参数值通过session获得。
+3. 服务器端验证请求类型和Token的合法性。
 
 
 ## XSS攻击
@@ -49,52 +51,54 @@ https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
 
 防御措施：
 
-	1. 输入过滤, 即使用Filter 过滤一些敏感字符"<" ">" "#" "script"等. 
-	2. 输出过滤，htmlEncode, javascriptEncode
-	3. 对敏感操作增加验证码
+1. 输入过滤, 即使用Filter 过滤一些敏感字符"<" ">" "#" "script"等. 
+2. 输出过滤，htmlEncode, javascriptEncode
+3. 对敏感操作增加验证码
 
 过滤工具推荐（java方向）：
-https://code.google.com/p/owaspantisamy  （比较全面，但有点笨拙）
-https://code.google.com/p/xssprotect/ 
+	https://code.google.com/p/owaspantisamy  （比较全面，但有点笨拙）
+	https://code.google.com/p/xssprotect/ 
 
 ## SQL注入攻击
 
 SQL注入这种老掉牙的攻击手段，我就不多介绍了。
 
 最简单的防御措施，使用预编译方式绑定变量：
-	1. JDBC 使用PreparedStatement.
-	2. mybatis/ibatis 使用静态变量#
+
+1. JDBC 使用PreparedStatement.
+2. mybatis/ibatis 使用静态变量#
 
 
-## 正确使用Cookie
+## 正确地使用Cookie
 
- 1. 对于无需JS访问的cookie设置HTTPOnly
- 2. 不要在cookie存放用户敏感数据。
+1. 对于无需JS访问的cookie设置HTTPOnly
+2. 不要在cookie存放用户敏感数据。
 
 ## 合理设计一个cookie自动登录方案
 
 ### 要保存哪些数据：
 
-	- cookie保存base64 encode(username|sequence|token)的value。
-	- 服务器使用Redis的Hashs结构保存以下这几个值。
-	<pre><code>
-		Key: user:<username>:cookie
-		hashKey: userAgent_ip,userAgent_sequence,userAgent_token,userAgent_expireTime	
-	</code></pre>
+- cookie保存base64 encode(username|sequence|token)的value。
+- 服务器使用Redis的Hashs结构保存以下这几个值。
+<pre><code>
+	Key: user:<username>:cookie
+	hashKey: userAgent_ip,userAgent_sequence,userAgent_token,userAgent_expireTime	
+</code></pre>
 
 ### 如何验证cookie登录：
 
-	- 如果expireTime没到而且username，sequence，token均相同，登录成功。
+- 如果expireTime没到而且username，sequence，token均相同，登录成功。
 
-	- 如果expireTime没到，username和sequence相同，token不同，但IP相同和userAgent不同，登录成功。为什么要这样的设计？因为同一用户可能会使用的不同设备/浏览器登录。
+- 如果expireTime没到，username和sequence相同，token不同，但IP相同和userAgent不同，登录成功。为什么要这样的设计？因为同一用户可能会使用的不同设备/浏览器登录。
 
-	- 其余情况均登录失败，并清空登录cookie。
+- 其余情况均登录失败，并清空登录cookie。
 
-	- 成功登录后，服务器update token，同时更新cookie。
+- 成功登录后，服务器update token，同时更新cookie。
 
 ### 后续操作：
-	- 修改密码/点击退出，更新服务器端的token和sequence。
-	- 对于敏感操作（如修改个人私隐信息，Email，password等）需要输入密码。
+
+- 修改密码/点击退出，更新服务器端的token和sequence。
+- 对于敏感操作（如修改个人私隐信息，Email，password等）需要输入密码。
 
 ## 数据安全
 
@@ -109,7 +113,7 @@ SQL注入这种老掉牙的攻击手段，我就不多介绍了。
 
 独立安全相关的log，方便追查和事后分析。
 
-## 下面2项可能不太属于程序员的范畴，但我还是觉得有必要了解。
+------------下面2项可能不太属于程序员的范畴，但我还是觉得有必要了解--------------
 
 ## 服务器运维配置
 
@@ -135,4 +139,4 @@ iptables 搞起, 该屏蔽就屏蔽，该开放的IP就开放。
 
 ##最后
 
-定期了解最新的攻击技术，没事多上上乌云。
+定期了解最新的攻击技术，没事多上上<a href="http://www.wooyun.org/" rel="nofollow">乌云</a>。

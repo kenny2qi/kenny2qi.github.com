@@ -455,7 +455,8 @@ body {
   color: #393536;
   font-weight: 300;
   line-height: 1.625em;
-  border-top: #393536 6px solid; }
+  border-top: #393536 6px solid;   
+  font-family: serif;}
 
 b {
   font-weight: 600; }
@@ -701,9 +702,14 @@ body.post article {
     text-transform: none;
     letter-spacing: normal;
     margin-bottom: 12px;
-    margin-top: 6px;
+    margin-top: 8px;
     line-height: 1.625em;
-    font-size: 1.1em; }
+    font-size: 1.2em; 
+    border-bottom: 2px solid rgb(133, 123, 123);}
+   body.post article h3 {
+    margin-bottom: 6px;
+    margin-top: 6px;
+    line-height: 1.625em;}
   body.post article .post-intro {
     font-size: 1.4em;
     line-height: 1.4em; }

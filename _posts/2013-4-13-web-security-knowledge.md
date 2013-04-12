@@ -55,7 +55,7 @@ https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
 2. 输出过滤，htmlEncode, javascriptEncode
 3. 对敏感操作增加验证码
 
-### 过滤工具推荐（java方向）：
+### 过滤工具推荐（java）：
 
 	https://code.google.com/p/owaspantisamy  （比较全面，但有点笨拙）
 	https://code.google.com/p/xssprotect/ 
@@ -81,9 +81,10 @@ SQL注入这种老掉牙的攻击手段，我就不多介绍了。
 
 - cookie保存base64 encode(username|sequence|token)的value。
 - 服务器使用Redis的Hashs结构保存以下这几个值。
-
-	Key: user:<username>:cookie
-	hashKey: userAgent_ip,userAgent_sequence,userAgent_token,userAgent_expireTime	
+<pre><code>
+Key: user:<username>:cookie
+hashKey: userAgent_ip,userAgent_sequence,userAgent_token,userAgent_expireTime	
+</code></pre>
 
 ### 如何验证cookie登录：
 
@@ -102,7 +103,8 @@ SQL注入这种老掉牙的攻击手段，我就不多介绍了。
 
 ## 数据安全
 
-相信大家还记得CSDN 明文密码被暴库泄露的事件吧。最近又有http://www.wooyun.org/bugs/wooyun-2010-018289
+相信大家还记得CSDN 明文密码被暴库泄露的事件吧。
+最近又有被暴库的，300w用户数据。 http://www.wooyun.org/bugs/wooyun-2010-018289
 
 ### 防御措施：
 

@@ -43,19 +43,20 @@ XSS的全称是Cross-site Scripting，就是跨站脚本攻击。主要分为非
 详细介绍看WIKI吧： http://zh.wikipedia.org/wiki/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC
 
 ### 经典案例：
-实在太多了，随便找一个
+实在太多了，随便找一个：
 http://www.wooyun.org/bugs/wooyun-2013-019036
 
-攻击类型列举：
+### XSS Cheat Sheet：
 https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
 
-防御措施：
+### 防御措施：
 
 1. 输入过滤, 即使用Filter 过滤一些敏感字符"<" ">" "#" "script"等. 
 2. 输出过滤，htmlEncode, javascriptEncode
 3. 对敏感操作增加验证码
 
-过滤工具推荐（java方向）：
+### 过滤工具推荐（java方向）：
+
 	https://code.google.com/p/owaspantisamy  （比较全面，但有点笨拙）
 	https://code.google.com/p/xssprotect/ 
 
@@ -81,8 +82,8 @@ SQL注入这种老掉牙的攻击手段，我就不多介绍了。
 - cookie保存base64 encode(username|sequence|token)的value。
 - 服务器使用Redis的Hashs结构保存以下这几个值。
 <pre><code>
-	Key: user:<username>:cookie
-	hashKey: userAgent_ip,userAgent_sequence,userAgent_token,userAgent_expireTime	
+Key: user:<username>:cookie
+hashKey: userAgent_ip,userAgent_sequence,userAgent_token,userAgent_expireTime	
 </code></pre>
 
 ### 如何验证cookie登录：
@@ -104,7 +105,7 @@ SQL注入这种老掉牙的攻击手段，我就不多介绍了。
 
 相信大家还记得CSDN 明文密码被暴库泄露的事件吧。最近又有http://www.wooyun.org/bugs/wooyun-2010-018289
 
-防御措施：
+### 防御措施：
 
 对密码采用<code class="default-size">MD5/SHA(salt+password)</code>进行HASH，salt是一串字符，为防止Rainbow Table 破解用的, salt应该放在一个隐秘的地方（某处代码或配置文件中）。
 
@@ -113,7 +114,7 @@ SQL注入这种老掉牙的攻击手段，我就不多介绍了。
 
 独立安全相关的log，方便追查和事后分析。
 
-------------下面2项可能不太属于程序员的范畴，但我还是觉得有必要了解--------------
+------------下面2项可能偏运维一点，但程序员还是觉得有必要了解--------------
 
 ## 服务器运维配置
 

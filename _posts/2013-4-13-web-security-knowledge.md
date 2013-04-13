@@ -52,7 +52,7 @@ https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
 ### 防御措施：
 
 1. 输入过滤, 即使用Filter 过滤一些敏感字符"<" ">" "#" "script"等. 
-2. 输出过滤，htmlEncode, javascriptEncode
+2. 输出过滤(output encoding)，htmlEncode, javascriptEncode
 3. 对敏感操作增加验证码
 
 ### 过滤工具推荐（java）：
@@ -142,3 +142,7 @@ iptables 搞起, 该屏蔽就屏蔽，该开放的IP就开放。
 ##最后
 
 定期了解最新的攻击技术，没事多上上<a href="http://www.wooyun.org/" rel="nofollow">乌云</a>。
+
+推荐书籍：
+<a href="http://book.douban.com/subject/2705016/" rel="nofollow">The Web Application Hacker's Handbook</a>
+<a href="http://book.douban.com/subject/10546925/" rel="nofollow">白帽子讲Web安全</a>

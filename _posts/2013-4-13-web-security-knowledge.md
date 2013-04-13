@@ -23,8 +23,7 @@ CSRF的全称是Cross Site Request Forgery，就是跨站点伪造请求攻击�
 ### 经典案例：
 
 看看乌云网友如何通过CSRF漏洞，自动加关注和发微博。
-http://www.wooyun.org/bugs/wooyun-2010-017271#0-tsina-1-80037-397232819ff9a47a7b7e80a40613cfe1
-
+<a href="http://www.wooyun.org/bugs/wooyun-2010-017271" rel="nofollow">我是如何刷新浪微博粉丝的</a>
 
 ###防御措施：
 
@@ -32,7 +31,7 @@ http://www.wooyun.org/bugs/wooyun-2010-017271#0-tsina-1-80037-397232819ff9a47a7b
 
 1. 用户第一次请求网站是生成CSRF Token并保存到session中。
 2. POST请求时，增加Input Field <code class="default-size">csrf_token</code>, 参数值通过session获得。
-3. 服务器端验证请求类型和Token的合法性。
+3. 服务器端验证Token的合法性，并更新token。
 
 
 ## XSS攻击
@@ -44,7 +43,7 @@ XSS的全称是Cross-site Scripting，就是跨站脚本攻击。主要分为非
 
 ### 经典案例：
 实在太多了，随便找一个：
-http://www.wooyun.org/bugs/wooyun-2013-019036
+<a href="http://www.wooyun.org/bugs/wooyun-2013-019036" rel="nofollow">百度经验存储型Xss</a>
 
 ### XSS Cheat Sheet：
 https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
@@ -57,7 +56,7 @@ https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
 
 ### 过滤工具推荐（java）：
 
-	https://code.google.com/p/owaspantisamy  （比较全面，但有点笨拙）
+	https://code.google.com/p/owaspantisamy  （比较全面，但有点重）
 	https://code.google.com/p/xssprotect/ 
 
 ## SQL注入攻击
@@ -104,7 +103,7 @@ hashKey: userAgent_ip,userAgent_sequence,userAgent_token,userAgent_expireTime
 ## 数据安全
 
 相信大家还记得CSDN 明文密码被暴库泄露的事件吧。
-最近又有被暴库的，300w用户数据。 http://www.wooyun.org/bugs/wooyun-2010-018289
+最近又有被暴库的，300w用户数据。<a href="http://www.wooyun.org/bugs/wooyun-2010-018289" rel="nofollow">住哪网300W+用户明文密码泄露</a>
 
 ### 防御措施：
 
@@ -120,7 +119,7 @@ hashKey: userAgent_ip,userAgent_sequence,userAgent_token,userAgent_expireTime
 ## 服务器运维配置
 
 给大家看看最近的一个案例:
-http://www.wooyun.org/bugs/wooyun-2010-018975
+<a href="http://www.wooyun.org/bugs/wooyun-2010-018975" rel="nofollow">UC运维不当 可导致大量数据泄漏</a>
 
 ### 防御措施：
 

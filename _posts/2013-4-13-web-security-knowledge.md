@@ -140,15 +140,17 @@ iptables 搞起, 该屏蔽就屏蔽，该开放的IP就开放。
 
 ##最后
 
-定期了解最新的攻击技术，没事多上上<a href="http://www.wooyun.org/" rel="nofollow">乌云</a>。
+定期了解最新的安全资讯和攻击技术，没事多上上<a href="http://www.wooyun.org/" rel="nofollow">乌云</a>。
 
-推荐书籍：
-<br><a href="http://book.douban.com/subject/2705016/" rel="nofollow">The Web Application Hacker's Handbook</a>
-<br>
-<a href="http://book.douban.com/subject/10546925/" rel="nofollow">白帽子讲Web安全</a>
+### 推荐书籍：
+<ul>
+<li><a href="http://book.douban.com/subject/2705016/" rel="nofollow">The Web Application Hacker's Handbook</a></li>
+<li><a href="http://book.douban.com/subject/10546925/" rel="nofollow">白帽子讲Web安全</a></li>
+</ul>
 
-推荐博客：
-<br>
-<a href="http://www.80sec.com/" rel="nofollow">80sec</a>
-<br>
-<a href="http://coolshell.cn/" rel="nofollow">酷壳</a>
+### 推荐博客：
+
+<ul>
+<li><a href="http://www.80sec.com/" rel="nofollow">80sec</a></li>
+<li><a href="http://coolshell.cn/" rel="nofollow">酷壳</a></li>
+</ul>

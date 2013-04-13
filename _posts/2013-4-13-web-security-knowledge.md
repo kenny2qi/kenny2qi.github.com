@@ -18,7 +18,7 @@ tags : [网站安全]
 ## CSRF 攻击
 
 CSRF的全称是Cross Site Request Forgery，就是跨站点伪造请求攻击。
-简单理解：Bad guy盗用你的身份，做桌下交易。详细原理看 http://en.wikipedia.org/wiki/Cross-site_request_forgery
+简单理解：Bad guy盗用你的身份，做桌下交易。详细原理看  <a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery" rel="nofollow">Cross Site Request Forgery</a>
 
 ### 经典案例：
 
@@ -39,7 +39,7 @@ CSRF的全称是Cross Site Request Forgery，就是跨站点伪造请求攻击�
 XSS攻击可以说最常见最严重的漏洞攻击了。
 
 XSS的全称是Cross-site Scripting，就是跨站脚本攻击。主要分为非存储型XSS(反射型）和存储型XSS.
-详细介绍看WIKI吧： http://zh.wikipedia.org/wiki/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC
+详细介绍看WIKI吧： <a href="http://zh.wikipedia.org/wiki/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC" rel="nofollow">Cross-site scripting </a>
 
 ### 经典案例：
 实在太多了，随便找一个：

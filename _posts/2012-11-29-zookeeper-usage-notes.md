@@ -3,7 +3,7 @@ layout: post
 title : Zookeeper使用上的注意事项 
 category : 分布式架构
 tags : [zookeeper, 分布式架构]
-summary-only: yes
+summary: <p>前段时间为Guang.com引入了Zookeeper，主要用于存储一些动态config/data，分布式锁，负载均衡，服务器监控等。现在，mark down一下zookeeper使用的注意事项和一些总结。</p>
 ---
 
 前段时间为Guang.com引入了Zookeeper，主要用于存储一些动态config/data，分布式锁，负载均衡，服务器监控等。现在，mark down一下zookeeper使用的注意事项和一些总结。

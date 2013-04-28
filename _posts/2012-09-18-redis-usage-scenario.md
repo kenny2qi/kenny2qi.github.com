@@ -1,12 +1,12 @@
 ---
 layout: post
-summary-only: yes
+summary: <p>话说使用Redis已经有好一段时间，趁有点时间，结合Guang.com 使用经验，总结一下Redis 在社会化电商网站的实际应用场景。文笔较差，各位看官，凑合着看下吧。</p>
 title : Redis 在电商中的实际应用场景	
 category : NOSQL
 tags : [java, redis, NOSQL, 电商, 分布式架构]
 ---
 
-话说使用Redis已经有好一段时间，趁有点时间，结合Guang.com 使用经验，总结一下Redis 在社会化电商网站的实际应用场景。文笔较差，各位看官，凑合着看下吧。^_^
+话说使用Redis已经有好一段时间，趁有点时间，结合Guang.com 使用经验，总结一下Redis 在社会化电商网站的实际应用场景。文笔较差，各位看官，凑合着看下吧。
 
 ##1. 各种计数，商品维度计数和用户维度计数
 

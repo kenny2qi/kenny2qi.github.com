@@ -1,6 +1,8 @@
 ---
 layout: post
-summary-only: yes
+summary: <p>前段时间Guang.com经常受到恶意spider攻击，疯狂抓取网站内容，一系列机器人spam发广告，对网站性能有较大影响。</p><p>下面我说说一些反恶意spider和spam的策略和思路。</p>
+
+<h2>1. 通过日志分析来识别恶意爬虫/攻击</h2>
 title : 关于反爬虫和恶意攻击的一些策略和思路	
 category : anti-spam
 tags : [java, redis, linux, anti-spam, 分布式架构]

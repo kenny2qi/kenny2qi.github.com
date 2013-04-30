@@ -34,12 +34,12 @@ OK, 接下来主要介绍后端的缓存机制、使用场景、产品选择等�
 
 ##缓存机制(Cache mechanism)
 
-1. 缓存主动更新
+###缓存主动更新
 修改数据（已缓存）时，同时立刻update/delete cache item 
 
 适合场景：实时性要求高，更新频率较低的 entity item, 如 product item， article item .
 
-2. 缓存被动（过期后）更新
+###缓存被动（过期后）更新
 设置一定的过期时间，过期后删除cache，下次被访问时去DB获取最新数据同时set回cache
 适合场景：可以允许一定延迟，更新频率较高的 List item, 如：商品列表页 item .
 
@@ -47,14 +47,14 @@ OK, 接下来主要介绍后端的缓存机制、使用场景、产品选择等�
 
 遇到这种情况可以采用<code>分布式锁</code>防止当失效那个点同时去DB获取数据，可以使用 zookeeper 分布式锁实现。但这时候用户还是需要等待个片刻（DB查询时间）。所以就有了下面2个改进机制。
 
-3. 缓存主动reload
+###缓存主动reload
 缓存永不失效或失效时间很长，独立一个服务，按业务需求定期查询最新数据并refresh cache.
 
 详细可以看这：<a href="http://kenny7.com/2012/10/cache-reload-mechanism.html">CACHE RELOAD机制设计和实现</a>
 
 适合场景：并发量大，允许一定延迟。如：首页、频道页等热门访问页面
 
-4. 缓存被动reload
+###缓存被动reload
 Cache 设置永不失效或失效时间很长，返回cache命中的内容，同时起另外一个线程，异步判断是否过期，若过期，重新reload cache.
 这种方式会有个不好处：如果这cache很久没命中，下一个用户获取的是严重 out of date内容。
 

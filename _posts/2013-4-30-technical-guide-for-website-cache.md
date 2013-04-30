@@ -6,7 +6,7 @@ category : 创业
 tags : [网站架构]
 ---
 
-对于一个大中型网站来说，缓存有多重要，肯定不言而喻啦。本篇为<a href="http://kenny7.com/2013/04/2013-3-10-technical-guide-for-website.md" >文章</a> 系列之一。
+对于一个大中型网站来说，缓存有多重要，肯定不言而喻啦。本篇为<a href="http://kenny7.com/2013/04/2013-3-10-technical-guide-for-website.md" >大中型网站架构技术浅析</a> 系列之一。
 
 ##1. Cache 分类
 

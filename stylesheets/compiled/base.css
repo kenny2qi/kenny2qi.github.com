@@ -489,10 +489,9 @@ pre {
   -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
-  padding: 20px 25px;
   font-size: 0.722222222222222em;
   line-height: 1.8em;
-  margin-bottom: 40px;    background: rgba(255, 255, 255, 0.5); }
+  margin-bottom: 20px;    background: rgba(255, 255, 255, 0.5); }
 
 pre, code, kbd, samp {
   font-family: 'Monaco', 'andale mono', 'lucida console', monospace; }

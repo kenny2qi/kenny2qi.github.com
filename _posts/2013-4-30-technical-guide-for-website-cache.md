@@ -91,7 +91,7 @@ Guava cache 不二之选，简单易用，性能好，不必重复造轮子了�
 - redis 一直在更新，产品活跃度高，关键作者antirez比较靠谱。
 - redis 还提供Lua Script支持，跟nginx 一样可以方便定制一些小功能。
 
-	Except：如果要存较大的item的话（gt 10K)，还是选择memcached 吧。
+<pre><code>Except：如果要存较大的item的话（gt 10K)，还是选择memcached 吧。</code></pre>
 
 redis的使用场景一览：
 <a href="http://kenny7.com/2012/09/redis-usage-scenario.html">REDIS 在电商中的实际应用场景</a>

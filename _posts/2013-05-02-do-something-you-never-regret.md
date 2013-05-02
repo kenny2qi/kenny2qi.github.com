@@ -3,11 +3,11 @@ layout: post
 title : 做一件很苦但不后悔的事 
 category : 创业
 tags : [创业]
-summary: <a href="http://kenword.com" title="啃词典"><img src="/images/kenword_index.png" alt="啃词典"></a><h3> <a href="http://kenword.com" title="啃词典">啃词典</a> ， 一件绝对苦B但不后悔的事</h3><p>3月底从逛出来，在家憋了一个多月，3点睡、11点多起来（这不就是印度时间般的作息），每天重复捣腾着 『产品设计』->『开发』->『测试』->『bug fixed』->『运维』->『数据处理（编辑）』，一人身兼n职，有时候还要考虑推广的事宜，处理备案等琐碎的事，过中还遇到各种不顺利。</p><p>有多累多苦B也许只有自己才知道，熬到今天我都佩服自己，虽则如此但我从不后悔做这么一个决定。</p>
+summary: <a target="_blank" href="http://kenword.com" title="啃词典"><img src="/images/kenword_index.png" alt="啃词典"></a><h3> <a target="_blank" href="http://kenword.com" title="啃词典">啃词典</a> ， 一件绝对苦B但不后悔的事</h3><p>3月底从逛出来，在家憋了一个多月，3点睡、11点多起来（这不就是印度时间般的作息），每天重复捣腾着 『产品设计』->『开发』->『测试』->『bug fixed』->『运维』->『数据处理（编辑）』，一人身兼n职，有时候还要考虑推广的事宜，处理备案等琐碎的事，过中还遇到各种不顺利。</p><p>有多累多苦B也许只有自己才知道，熬到今天我都佩服自己，虽则如此但我从不后悔做这么一个决定。</p>
 ---
-<a href="http://kenword.com" title="啃词典"><img src="/images/kenword_index.png" alt="啃词典"></a>
+<a target="_blank" href="http://kenword.com" title="啃词典"><img src="/images/kenword_index.png" alt="啃词典"></a>
 
-<h2> <a href="http://kenword.com" title="啃词典">啃词典</a>， 一件绝对苦B但不后悔的事</h2>
+<h2> <a target="_blank" href="http://kenword.com" title="啃词典">啃词典</a>， 一件绝对苦B但不后悔的事</h2>
 
 <p>3月底从逛出来，在家憋了一个多月，3点睡、11点多起来（这不就是印度时间般的作息），每天重复捣腾着 『产品设计』->『开发』->『测试』->『bug fixed』->『运维』->『数据处理（编辑）』，一人身兼n职，有时候还要考虑推广的事宜，处理备案等琐碎的事，过中还遇到各种不顺利。</p>
 <p>有多累多苦B也许只有自己才知道，熬到今天我都佩服自己，虽则如此但我从不后悔做这么一个决定。</p>
@@ -64,7 +64,7 @@ summary: <a href="http://kenword.com" title="啃词典"><img src="/images/kenwor
 
 虽然我非常喜欢这项目，脑子里也很好多idea，对于一个短期没有良好商业模式的项目，我不能长期沉在这创业梦中，毕竟我还要生活/生存下去，今天的发布也算是完成了自己的心愿。
 
-也许人生不能强求太多，<a href="http://kenword.com/w/what_will_be_will_be,_what_is_gone_is_gone">What will be will be, What is gone is gone.</a>
+也许人生不能强求太多，<a target="_blank" href="http://kenword.com/w/what_will_be_will_be,_what_is_gone_is_gone">What will be will be, What is gone is gone.</a>
 
 也许是该去找工作了，但我承诺会用业余时间不断改善『啃词典』.
 

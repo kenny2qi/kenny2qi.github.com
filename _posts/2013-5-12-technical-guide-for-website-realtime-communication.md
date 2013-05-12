@@ -42,6 +42,7 @@ tags : [网站架构]
 
 
 2.1.2 <strong>Script Tag Long Polling</strong>
+
 原理跟XHR Long Polling类似，只是结合long polling和jsonp，用来支持跨域（cross-domain）请求。
 
 - 优点：减少轮询，低延迟，支持跨域，各大浏览器均支持

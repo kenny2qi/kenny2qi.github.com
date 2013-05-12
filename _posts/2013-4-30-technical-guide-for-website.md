@@ -12,6 +12,7 @@ tags : [网站架构]
 <ul>
 <li>缓存机制与使用</li>
 <li>web 安全</li>
+<li>实时通信</li>
 </ul>
 
 ## Overview
@@ -25,7 +26,8 @@ tags : [网站架构]
 请参考 <a href="http://kenny7.com/2013/04/technical-guide-for-website-cache.html">大中型网站架构设计 - 缓存机制与使用</a>
 
 ###4. 通信机制
- - <a href="http://kenny7.com/2013/04/technical-guide-for-website-cache.html">实时通信</a>
+ - <a href="http://kenny7.com/2013/05/technical-guide-for-website-realtime-communication.html">实时通信</a>
+ 
 ###5. 分布式机制
 
 ###6. 搜索机制

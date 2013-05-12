@@ -1,6 +1,6 @@
 ---
 layout: post
-summary: 
+summary: <p>本文所讲述的『实时通信』主要围绕浏览器端和服务器端之间的实时通信。<a href="http://kenny7.com/2013/04/2013-3-10-technical-guide-for-website.md" >大中型网站技术架构浅析</a> 系列之一。</p><p>实时通信主要分3大类：</p><img src="/images/polling.png" alt="轮询(Polling)">
 title : 大中型网站技术架构浅析 - 实时通信
 category : 架构
 tags : [网站架构]

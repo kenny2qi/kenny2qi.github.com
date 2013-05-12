@@ -1,12 +1,12 @@
 ---
 layout: post
 summary: <p>对于一个大中型网站来说，缓存有多重要，肯定不言而喻啦。</p>
-title : 大中型网站架构技术浅析 - 缓存机制与使用
-category : 创业
+title : 大中型网站技术架构浅析 - 缓存机制与使用
+category : 架构
 tags : [网站架构]
 ---
 
-对于一个大中型网站来说，缓存有多重要，肯定不言而喻啦。本篇为<a href="http://kenny7.com/2013/04/2013-3-10-technical-guide-for-website.md" >大中型网站架构技术浅析</a> 系列之一。
+对于一个大中型网站来说，缓存有多重要，肯定不言而喻啦。本篇为<a href="http://kenny7.com/2013/04/2013-3-10-technical-guide-for-website.md" >大中型网站技术架构浅析</a> 系列之一。
 
 ##1. Cache 分类
 

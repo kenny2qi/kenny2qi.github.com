@@ -1,7 +1,7 @@
 ---
 layout: post
 summary: <p>貌似有点儿标题党了 -_-# ..想写这一系列文章很久了，但一直提不起劲写。五一抽空写了下，just分享一下自己的一些心得，不会对部分技术深入探讨，大牛们勿喷。陆续更新中...</p>
-title : 『置顶』大中型网站架构技术浅析
+title : 『置顶』大中型网站技术架构浅析
 category : 架构
 tags : [网站架构]
 ---
@@ -25,7 +25,7 @@ tags : [网站架构]
 请参考 <a href="http://kenny7.com/2013/04/technical-guide-for-website-cache.html">大中型网站架构设计 - 缓存机制与使用</a>
 
 ###4. 通信机制
-
+ - <a href="http://kenny7.com/2013/04/technical-guide-for-website-cache.html">实时通信</a>
 ###5. 分布式机制
 
 ###6. 搜索机制

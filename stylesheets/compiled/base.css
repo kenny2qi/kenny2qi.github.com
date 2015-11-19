@@ -915,7 +915,7 @@ body.about section {
     background: url(/images/nm-logo@2x.png) no-repeat; }
 
   #secondary-logo {
-    background: url(/images/nm-logo@2x.png) no-repeat; } }
+    background: url(/images/nm-logo@2x.png) no-repeat; background-size: 100%;} }
 @media print {
   * {
     background: transparent !important;
